@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Pixi.js — filtro — GSAP Visual Codex</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --bg-1: #0d0f10; --bg-2: #1a1d20; --accent: #88ce02; --coral: #ff5e7a; --border-1: #2d3339; }
+body { font-family: -apple-system, sans-serif; background: var(--bg-1); color: #e4e8ec; }
+.page { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+.back { color: #a1a9b3; text-decoration: none; display: inline-block; margin-bottom: 1.5rem; padding: 0.4rem 1rem; border: 1px solid var(--border-1); border-radius: 8px; }
+h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; font-family: monospace; }
+.subtitle { color: #a1a9b3; margin-bottom: 2rem; }
+#stage { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); min-height: 400px; padding: 2rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+.btn { padding: 0.5rem 1.5rem; border-radius: 8px; border: 1px solid var(--border-1); background: var(--bg-2); color: #e4e8ec; cursor: pointer; margin-bottom: 1rem; }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+code { font-family: monospace; font-size: 0.85rem; color: #cdd6f4; background: #1e1e2e; border-radius: 8px; padding: 1rem; display: block; white-space: pre; margin-top: 1rem; overflow-x: auto; }
+.box { width: 100px; height: 100px; background: var(--accent); border-radius: 8px; }
+.circle { width: 80px; height: 80px; background: var(--coral); border-radius: 50%; }
+</style></head>
+<body><div class="page">
+<a href="../../todas-las-animaciones.html" class="back">← Volver</a>
+<h1>Pixi.js — filtro</h1><p class="subtitle">Filtros visuales</p>
+<div id="stage"></div>
+<button class="btn" onclick="location.reload()">↻ Reiniciar</button>
+<code id="code"></code>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+const stage = document.getElementById('stage');
+const box = document.createElement('div');
+box.className = 'box';
+stage.appendChild(box);
+gsap.to(box, {
+  filter: 'blur(8px)',
+  duration: 1.5,
+  repeat: -1,
+  yoyo: true
+});
+document.getElementById('code').textContent = 'const blurFilter = new PIXI.filters.BlurFilter();\ngsap.to(blurFilter, {blur:10, duration:2, repeat:-1});';
+</script></body></html>

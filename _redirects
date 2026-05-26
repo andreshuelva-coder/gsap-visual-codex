@@ -1,0 +1,12 @@
+# Redirige URLs sin .html a archivos .html
+/animations/3d/*           /animations/3d/:splat.html           200
+/animations/advanced/*     /animations/advanced/:splat.html     200
+/animations/easing/*       /animations/easing/:splat.html       200
+/animations/fundamentos/*  /animations/fundamentos/:splat.html  200
+/animations/interaction/*  /animations/interaction/:splat.html  200
+/animations/patterns/*     /animations/patterns/:splat.html     200
+/animations/scroll/*       /animations/scroll/:splat.html       200
+/animations/stagger/*      /animations/stagger/:splat.html      200
+/animations/svg/*          /animations/svg/:splat.html          200
+/animations/text/*         /animations/text/:splat.html         200
+/animations/timeline/*     /animations/timeline/:splat.html     200

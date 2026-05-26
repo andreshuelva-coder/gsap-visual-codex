@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark" data-name-lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animación · GSAP Visual Codex</title>
+  <meta name="description" content="Ficha interactiva de una animación con GSAP — demo en vivo, panel de control y código copiable.">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Estilos del sitio -->
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/animation-page.css">
+  <link rel="stylesheet" href="/css/controls.css">
+
+  <!-- Highlight.js Tokyo Night -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/tokyo-night-dark.min.css">
+</head>
+
+<!--
+  CADA PÁGINA DE ANIMACIÓN SOLO NECESITA CAMBIAR ESTOS DOS ATRIBUTOS:
+    data-animation-id="<slug>"
+    data-category="<categoria-slug>"
+  Todo lo demás se rellena automáticamente desde animations.json
+  + el módulo /modules/animations/{categoria}/{slug}.js
+-->
+<body data-animation-id="" data-category="">
+
+  <header id="site-header" role="banner"></header>
+
+  <main class="animation-page">
+
+    <nav class="breadcrumbs container" aria-label="Migas de pan">
+      <ol id="breadcrumbs"></ol>
+    </nav>
+
+    <!-- ════════ BLOQUE 1 — CABECERA ════════ -->
+    <section class="block block-hero" aria-labelledby="animation-title">
+      <div class="hero-text stack">
+        <span class="block-number">B-01 · Cabecera</span>
+        <h1 id="animation-title" data-name-es="" data-name-en="">…</h1>
+        <p class="subtitle">…</p>
+        <ul class="badges" aria-label="Etiquetas de la animación"></ul>
+      </div>
+
+      <aside class="prompt-box" aria-labelledby="prompt-heading">
+        <h2 id="prompt-heading">💬 Prompt sugerido para tu IA</h2>
+        <blockquote>…</blockquote>
+        <button type="button" class="btn btn-primary btn-copy" aria-label="Copiar prompt al portapapeles">
+          📋 Copiar prompt
+        </button>
+      </aside>
+    </section>
+
+    <!-- ════════ BLOQUE 2 — DEMO ════════ -->
+    <section class="block block-demo" aria-labelledby="demo-heading">
+      <header class="block-heading">
+        <span class="block-num">B-02</span>
+        <span>Demo en vivo</span>
+        <span class="block-label"></span>
+      </header>
+      <h2 id="demo-heading" class="sr-only">Demostración en vivo</h2>
+      <div id="demo-stage" class="demo-stage" aria-live="polite"></div>
+      <div class="demo-controls" role="toolbar" aria-label="Controles de reproducción">
+        <button type="button" id="btn-play" class="btn">▶ Reproducir</button>
+        <button type="button" id="btn-restart" class="btn">↻ Reiniciar</button>
+        <button type="button" id="btn-pause" class="btn">⏸ Pausa</button>
+      </div>
+    </section>
+
+    <!-- ════════ BLOQUE 3 — PANEL DE CONTROL ════════ -->
+    <section class="block block-controls" aria-labelledby="controls-heading">
+      <header class="block-heading">
+        <span class="block-num">B-03</span>
+        <span>Panel de control · cámbialo todo y mira qué pasa</span>
+        <span class="block-label"></span>
+      </header>
+      <h2 id="controls-heading" class="sr-only">Panel de control</h2>
+      <form id="control-panel" class="control-panel-form" autocomplete="off" onsubmit="return false"></form>
+      <div class="panel-actions">
+        <button type="button" id="btn-reset" class="btn btn-ghost">🔄 Restaurar valores</button>
+        <button type="button" id="btn-random" class="btn btn-ghost">🎲 Aleatorio</button>
+      </div>
+    </section>
+
+    <!-- ════════ BLOQUE 4 — CÓDIGO ════════ -->
+    <section class="block block-code" aria-labelledby="code-heading">
+      <header class="block-heading">
+        <span class="block-num">B-04</span>
+        <span>Código exacto que está ejecutándose arriba</span>
+        <span class="block-label"></span>
+      </header>
+      <h2 id="code-heading" class="sr-only">Código fuente</h2>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-tabs" role="tablist" aria-label="Lenguaje">
+            <button type="button" role="tab" data-tab="html" aria-selected="false">HTML</button>
+            <button type="button" role="tab" data-tab="css"  aria-selected="false">CSS</button>
+            <button type="button" role="tab" data-tab="js"   aria-selected="true">JS</button>
+          </div>
+          <div class="code-actions">
+            <button type="button" id="btn-copy-code" class="btn">📋 Copiar</button>
+            <button type="button" id="btn-download-html" class="btn btn-ghost">📥 Descargar .html</button>
+          </div>
+        </div>
+        <div class="code-display-wrap">
+          <pre><code id="code-display" class="hljs language-javascript">// El código aparecerá aquí.</code></pre>
+        </div>
+        <div class="code-cdn-note"></div>
+      </div>
+    </section>
+
+    <!-- ════════ BLOQUE 5 — DOCUMENTACIÓN ════════ -->
+    <section class="block block-docs" aria-labelledby="docs-heading">
+      <header class="block-heading">
+        <span class="block-num">B-05</span>
+        <span>Documentación pedagógica · entiende cada pieza</span>
+        <span class="block-label"></span>
+      </header>
+      <h2 id="docs-heading" class="sr-only">Documentación pedagógica</h2>
+
+      <div class="docs-wrap">
+        <details open>
+          <summary>📖 ¿Qué es esta animación y cuándo usarla?</summary>
+          <div class="doc-body" data-doc="intro"></div>
+        </details>
+
+        <details>
+          <summary>🔧 Método de tween usado</summary>
+          <div class="doc-body" data-doc="method"></div>
+        </details>
+
+        <details>
+          <summary>📦 El objeto de variables (vars)</summary>
+          <div class="doc-body" data-doc="varsTable"></div>
+        </details>
+
+        <details>
+          <summary>⚙️ Conceptos internos del objeto</summary>
+          <div class="doc-body" data-doc="internals"></div>
+        </details>
+
+        <details>
+          <summary>🏗️ Estructuras avanzadas y extensiones</summary>
+          <div class="doc-body" data-doc="advanced"></div>
+        </details>
+
+        <details>
+          <summary>💡 Variaciones sugeridas</summary>
+          <div class="doc-body" data-doc="variations"></div>
+        </details>
+
+        <details>
+          <summary>🔗 Animaciones relacionadas</summary>
+          <div class="doc-body" data-doc="related"></div>
+        </details>
+
+        <details>
+          <summary>⚠️ Errores comunes</summary>
+          <div class="doc-body" data-doc="pitfalls"></div>
+        </details>
+
+        <details>
+          <summary>📚 Referencias oficiales</summary>
+          <div class="doc-body" data-doc="references"></div>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer" role="contentinfo"></footer>
+
+  <!-- Core de GSAP siempre presente; los plugins los inyecta plugin-loader.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+
+  <script type="module" src="/shared/page-loader.js"></script>
+  <script type="module" src="/js/animation-page.js"></script>
+</body>
+</html>

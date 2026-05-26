@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Nav con underline animado — GSAP Visual Codex</title><style>* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --bg-1: #0d0f10; --bg-2: #1a1d20; --bg-3: #252a30; --text-1: #e4e8ec; --text-2: #a1a9b3; --accent: #88ce02; --coral: #ff5e7a; --border-1: #2d3339; --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; --font-mono: 'JetBrains Mono', monospace; }
+body { font-family: var(--font-body); background: var(--bg-1); color: var(--text-1); }
+.page { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+.back { color: var(--text-2); text-decoration: none; display: inline-block; margin-bottom: 1.5rem; padding: 0.4rem 1rem; border: 1px solid var(--border-1); border-radius: 8px; }
+.back:hover { color: var(--accent); border-color: var(--accent); }
+h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; font-family: var(--font-mono); }
+.subtitle { color: var(--text-2); margin-bottom: 2rem; }
+.stage-wrapper { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); overflow: hidden; margin-bottom: 1rem; }
+#demo-stage { min-height: 300px; display: flex; align-items: center; justify-content: center; padding: 2rem; flex-wrap: wrap; gap: 1rem; position: relative; }
+.controls-bar { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.btn { padding: 0.5rem 1.5rem; border-radius: 8px; border: 1px solid var(--border-1); background: var(--bg-2); color: var(--text-1); cursor: pointer; transition: all 0.2s; font-family: var(--font-body); }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.panel { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; margin-bottom: 2rem; }
+.panel h3 { color: var(--accent); margin-bottom: 1rem; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.control-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+.control-row label { min-width: 130px; font-size: 0.85rem; color: var(--text-2); }
+.control-row input[type=range] { flex: 1; accent-color: var(--accent); }
+.control-row select { padding: 0.25rem 0.5rem; background: var(--bg-3); color: var(--text-1); border: 1px solid var(--border-1); border-radius: 4px; flex: 1; }
+.val { min-width: 50px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); }
+.code-block { background: #1e1e2e; border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; margin-bottom: 2rem; }
+pre { overflow-x: auto; } code { font-family: var(--font-mono); font-size: 0.9rem; color: #cdd6f4; white-space: pre; }
+.copy-btn { margin-bottom: 1rem; }</style></head>
+<body><div class="page">
+<a href="../../todas-las-animaciones.html" class="back">← Volver</a>
+<h1>Nav con underline animado</h1><p class="subtitle">Indicador de navegación activa con línea deslizante</p>
+<div class="stage-wrapper"><div id="demo-stage" style="flex-direction:column;align-items:stretch;gap:0;padding:0;">
+<nav id="nav-bar" style="display:flex;border-bottom:1px solid var(--border-1);position:relative;padding:0 1rem;">
+</nav>
+<div id="page-content" style="padding:2rem;color:var(--text-2);min-height:150px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;"></div>
+</nav></div></div>
+<div class="panel"><h3>Panel de control</h3>
+<div class="control-row"><label>ease</label><select id="c-ease"><option>power3.out</option><option>elastic.out(1,0.4)</option><option>back.out(2)</option></select></div>
+</div>
+<div class="code-block"><button class="btn copy-btn" onclick="copyCode()">📋 Copiar</button><pre><code id="code-display"></code></pre></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script>
+let currentTween = null;
+const stage = document.getElementById('demo-stage');
+function copyCode() { navigator.clipboard.writeText(document.getElementById('code-display').textContent); }
+
+const navItems = [
+    { label: 'Inicio', content: '🏠 Página de Inicio' },
+    { label: 'Productos', content: '📦 Catálogo de Productos' },
+    { label: 'Blog', content: '📝 Últimas Entradas del Blog' },
+    { label: 'Contacto', content: '📧 Formulario de Contacto' },
+];
+let activeIndex = 0;
+
+function restartAnim() {
+    gsap.killTweensOf('*');
+    const nav = document.getElementById('nav-bar');
+    const content = document.getElementById('page-content');
+    const ease = document.getElementById('c-ease').value;
+    nav.innerHTML = '';
+    // Indicador deslizante
+    const indicator = document.createElement('div');
+    indicator.style.cssText = 'position:absolute;bottom:-1px;height:2px;background:var(--accent);border-radius:2px 2px 0 0;';
+    nav.appendChild(indicator);
+    const btns = navItems.map((item, i) => {
+        const btn = document.createElement('button');
+        btn.textContent = item.label;
+        btn.style.cssText = `padding:1rem 1.25rem;border:none;background:transparent;color:${i === 0 ? 'var(--accent)' : 'var(--text-2)'};cursor:pointer;font-family:var(--font-body);font-size:0.9rem;font-weight:${i === 0 ? '700' : '400'};position:relative;`;
+        btn.onclick = () => {
+            const prevBtn = btns[activeIndex];
+            prevBtn.style.color = 'var(--text-2)';
+            prevBtn.style.fontWeight = '400';
+            btn.style.color = 'var(--accent)';
+            btn.style.fontWeight = '700';
+            activeIndex = i;
+            const btnRect = btn.getBoundingClientRect();
+            const navRect = nav.getBoundingClientRect();
+            gsap.to(indicator, { x: btn.offsetLeft, width: btn.offsetWidth, duration: 0.4, ease });
+            gsap.to(content, { opacity: 0, y: -10, duration: 0.15, onComplete: () => {
+                content.textContent = item.content;
+                gsap.fromTo(content, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.25 });
+            }});
+        };
+        nav.appendChild(btn);
+        return btn;
+    });
+    // Inicializar posición del indicador
+    setTimeout(() => {
+        gsap.set(indicator, { x: btns[0].offsetLeft, width: btns[0].offsetWidth });
+        content.textContent = navItems[0].content;
+    }, 50);
+    document.getElementById('code-display').textContent = `// Nav con underline deslizante
+function moveIndicator(activeBtn) {
+  gsap.to(".indicator", {
+    x: activeBtn.offsetLeft,
+    width: activeBtn.offsetWidth,
+    duration: 0.4,
+    ease: "${ease}"
+  });
+}`;
+}
+document.getElementById('c-ease').addEventListener('change', restartAnim);
+
+if (typeof restartAnim === 'function') restartAnim();
+</script></body></html>

@@ -1,0 +1,1184 @@
+{
+  "meta": {
+    "version": "1.0"
+  },
+  "categories": [
+    {
+      "id": "fundamentos",
+      "label": "Fundamentos",
+      "emoji": "📌",
+      "animations": [
+        {
+          "id": "gsap-context",
+          "title": "Gsap Context",
+          "path": "animations/fundamentos/gsap-context.html"
+        },
+        {
+          "id": "gsap-delayedcall",
+          "title": "Gsap Delayedcall",
+          "path": "animations/fundamentos/gsap-delayedcall.html"
+        },
+        {
+          "id": "gsap-effects",
+          "title": "Gsap Effects",
+          "path": "animations/fundamentos/gsap-effects.html"
+        },
+        {
+          "id": "gsap-from",
+          "title": "Gsap From",
+          "path": "animations/fundamentos/gsap-from.html"
+        },
+        {
+          "id": "gsap-fromto",
+          "title": "Gsap Fromto",
+          "path": "animations/fundamentos/gsap-fromto.html"
+        },
+        {
+          "id": "gsap-getproperty",
+          "title": "Gsap Getproperty",
+          "path": "animations/fundamentos/gsap-getproperty.html"
+        },
+        {
+          "id": "gsap-killtweensof",
+          "title": "Gsap Killtweensof",
+          "path": "animations/fundamentos/gsap-killtweensof.html"
+        },
+        {
+          "id": "gsap-quicksetter",
+          "title": "Gsap Quicksetter",
+          "path": "animations/fundamentos/gsap-quicksetter.html"
+        },
+        {
+          "id": "gsap-quickto",
+          "title": "Gsap Quickto",
+          "path": "animations/fundamentos/gsap-quickto.html"
+        },
+        {
+          "id": "gsap-set",
+          "title": "Gsap Set",
+          "path": "animations/fundamentos/gsap-set.html"
+        },
+        {
+          "id": "gsap-timeline",
+          "title": "Gsap Timeline",
+          "path": "animations/fundamentos/gsap-timeline.html"
+        },
+        {
+          "id": "gsap-to",
+          "title": "Gsap To",
+          "path": "animations/fundamentos/gsap-to.html"
+        }
+      ]
+    },
+    {
+      "id": "easing",
+      "label": "Easing",
+      "emoji": "📈",
+      "animations": [
+        {
+          "id": "ease-back-in",
+          "title": "Ease Back In",
+          "path": "animations/easing/ease-back-in.html"
+        },
+        {
+          "id": "ease-back",
+          "title": "Ease Back",
+          "path": "animations/easing/ease-back.html"
+        },
+        {
+          "id": "ease-bounce",
+          "title": "Ease Bounce",
+          "path": "animations/easing/ease-bounce.html"
+        },
+        {
+          "id": "ease-bouncein",
+          "title": "Ease Bouncein",
+          "path": "animations/easing/ease-bouncein.html"
+        },
+        {
+          "id": "ease-bounceinout",
+          "title": "Ease Bounceinout",
+          "path": "animations/easing/ease-bounceinout.html"
+        },
+        {
+          "id": "ease-circ-in",
+          "title": "Ease Circ In",
+          "path": "animations/easing/ease-circ-in.html"
+        },
+        {
+          "id": "ease-circ",
+          "title": "Ease Circ",
+          "path": "animations/easing/ease-circ.html"
+        },
+        {
+          "id": "ease-cubic",
+          "title": "Ease Cubic",
+          "path": "animations/easing/ease-cubic.html"
+        },
+        {
+          "id": "ease-custom",
+          "title": "Ease Custom",
+          "path": "animations/easing/ease-custom.html"
+        },
+        {
+          "id": "ease-custombounce",
+          "title": "Ease Custombounce",
+          "path": "animations/easing/ease-custombounce.html"
+        },
+        {
+          "id": "ease-customwiggle",
+          "title": "Ease Customwiggle",
+          "path": "animations/easing/ease-customwiggle.html"
+        },
+        {
+          "id": "ease-elastic",
+          "title": "Ease Elastic",
+          "path": "animations/easing/ease-elastic.html"
+        },
+        {
+          "id": "ease-explorer",
+          "title": "Ease Explorer",
+          "path": "animations/easing/ease-explorer.html"
+        },
+        {
+          "id": "ease-expo",
+          "title": "Ease Expo",
+          "path": "animations/easing/ease-expo.html"
+        },
+        {
+          "id": "ease-exposcale",
+          "title": "Ease Exposcale",
+          "path": "animations/easing/ease-exposcale.html"
+        },
+        {
+          "id": "ease-linear",
+          "title": "Ease Linear",
+          "path": "animations/easing/ease-linear.html"
+        },
+        {
+          "id": "ease-log",
+          "title": "Ease Log",
+          "path": "animations/easing/ease-log.html"
+        },
+        {
+          "id": "ease-power",
+          "title": "Ease Power",
+          "path": "animations/easing/ease-power.html"
+        },
+        {
+          "id": "ease-power1in",
+          "title": "Ease Power1In",
+          "path": "animations/easing/ease-power1in.html"
+        },
+        {
+          "id": "ease-power1out",
+          "title": "Ease Power1Out",
+          "path": "animations/easing/ease-power1out.html"
+        },
+        {
+          "id": "ease-power3out",
+          "title": "Ease Power3Out",
+          "path": "animations/easing/ease-power3out.html"
+        },
+        {
+          "id": "ease-power4out",
+          "title": "Ease Power4Out",
+          "path": "animations/easing/ease-power4out.html"
+        },
+        {
+          "id": "ease-quad-out",
+          "title": "Ease Quad Out",
+          "path": "animations/easing/ease-quad-out.html"
+        },
+        {
+          "id": "ease-quad",
+          "title": "Ease Quad",
+          "path": "animations/easing/ease-quad.html"
+        },
+        {
+          "id": "ease-quart",
+          "title": "Ease Quart",
+          "path": "animations/easing/ease-quart.html"
+        },
+        {
+          "id": "ease-quint",
+          "title": "Ease Quint",
+          "path": "animations/easing/ease-quint.html"
+        },
+        {
+          "id": "ease-rough",
+          "title": "Ease Rough",
+          "path": "animations/easing/ease-rough.html"
+        },
+        {
+          "id": "ease-sine",
+          "title": "Ease Sine",
+          "path": "animations/easing/ease-sine.html"
+        },
+        {
+          "id": "ease-slowmo",
+          "title": "Ease Slowmo",
+          "path": "animations/easing/ease-slowmo.html"
+        },
+        {
+          "id": "ease-steps",
+          "title": "Ease Steps",
+          "path": "animations/easing/ease-steps.html"
+        }
+      ]
+    },
+    {
+      "id": "timeline",
+      "label": "Timeline",
+      "emoji": "⏱️",
+      "animations": [
+        {
+          "id": "timeline-basic",
+          "title": "Timeline Basic",
+          "path": "animations/timeline/timeline-basic.html"
+        },
+        {
+          "id": "timeline-call",
+          "title": "Timeline Call",
+          "path": "animations/timeline/timeline-call.html"
+        },
+        {
+          "id": "timeline-control",
+          "title": "Timeline Control",
+          "path": "animations/timeline/timeline-control.html"
+        },
+        {
+          "id": "timeline-events",
+          "title": "Timeline Events",
+          "path": "animations/timeline/timeline-events.html"
+        },
+        {
+          "id": "timeline-labels",
+          "title": "Timeline Labels",
+          "path": "animations/timeline/timeline-labels.html"
+        },
+        {
+          "id": "timeline-mixed",
+          "title": "Timeline Mixed",
+          "path": "animations/timeline/timeline-mixed.html"
+        },
+        {
+          "id": "timeline-nested",
+          "title": "Timeline Nested",
+          "path": "animations/timeline/timeline-nested.html"
+        },
+        {
+          "id": "timeline-pause",
+          "title": "Timeline Pause",
+          "path": "animations/timeline/timeline-pause.html"
+        },
+        {
+          "id": "timeline-position",
+          "title": "Timeline Position",
+          "path": "animations/timeline/timeline-position.html"
+        },
+        {
+          "id": "timeline-repeat",
+          "title": "Timeline Repeat",
+          "path": "animations/timeline/timeline-repeat.html"
+        }
+      ]
+    },
+    {
+      "id": "stagger",
+      "label": "Stagger",
+      "emoji": "🌊",
+      "animations": [
+        {
+          "id": "stagger-axis",
+          "title": "Stagger Axis",
+          "path": "animations/stagger/stagger-axis.html"
+        },
+        {
+          "id": "stagger-ease",
+          "title": "Stagger Ease",
+          "path": "animations/stagger/stagger-ease.html"
+        },
+        {
+          "id": "stagger-function",
+          "title": "Stagger Function",
+          "path": "animations/stagger/stagger-function.html"
+        },
+        {
+          "id": "stagger-grid",
+          "title": "Stagger Grid",
+          "path": "animations/stagger/stagger-grid.html"
+        },
+        {
+          "id": "stagger-object",
+          "title": "Stagger Object",
+          "path": "animations/stagger/stagger-object.html"
+        },
+        {
+          "id": "stagger-patterns",
+          "title": "Stagger Patterns",
+          "path": "animations/stagger/stagger-patterns.html"
+        },
+        {
+          "id": "stagger-repeatyoyo",
+          "title": "Stagger Repeatyoyo",
+          "path": "animations/stagger/stagger-repeatyoyo.html"
+        },
+        {
+          "id": "stagger-simple",
+          "title": "Stagger Simple",
+          "path": "animations/stagger/stagger-simple.html"
+        }
+      ]
+    },
+    {
+      "id": "scroll",
+      "label": "Scroll",
+      "emoji": "📜",
+      "animations": [
+        {
+          "id": "scroll-batch",
+          "title": "Scroll Batch",
+          "path": "animations/scroll/scroll-batch.html"
+        },
+        {
+          "id": "scroll-callbacks",
+          "title": "Scroll Callbacks",
+          "path": "animations/scroll/scroll-callbacks.html"
+        },
+        {
+          "id": "scroll-flip",
+          "title": "Scroll Flip",
+          "path": "animations/scroll/scroll-flip.html"
+        },
+        {
+          "id": "scroll-horizontal-pin",
+          "title": "Scroll Horizontal Pin",
+          "path": "animations/scroll/scroll-horizontal-pin.html"
+        },
+        {
+          "id": "scroll-horizontal",
+          "title": "Scroll Horizontal",
+          "path": "animations/scroll/scroll-horizontal.html"
+        },
+        {
+          "id": "scroll-image-sequence",
+          "title": "Scroll Image Sequence",
+          "path": "animations/scroll/scroll-image-sequence.html"
+        },
+        {
+          "id": "scroll-indicator",
+          "title": "Scroll Indicator",
+          "path": "animations/scroll/scroll-indicator.html"
+        },
+        {
+          "id": "scroll-markers",
+          "title": "Scroll Markers",
+          "path": "animations/scroll/scroll-markers.html"
+        },
+        {
+          "id": "scroll-parallax-multi",
+          "title": "Scroll Parallax Multi",
+          "path": "animations/scroll/scroll-parallax-multi.html"
+        },
+        {
+          "id": "scroll-parallax",
+          "title": "Scroll Parallax",
+          "path": "animations/scroll/scroll-parallax.html"
+        },
+        {
+          "id": "scroll-pin-section",
+          "title": "Scroll Pin Section",
+          "path": "animations/scroll/scroll-pin-section.html"
+        },
+        {
+          "id": "scroll-pin-spacing",
+          "title": "Scroll Pin Spacing",
+          "path": "animations/scroll/scroll-pin-spacing.html"
+        },
+        {
+          "id": "scroll-pin-timeline",
+          "title": "Scroll Pin Timeline",
+          "path": "animations/scroll/scroll-pin-timeline.html"
+        },
+        {
+          "id": "scroll-pin",
+          "title": "Scroll Pin",
+          "path": "animations/scroll/scroll-pin.html"
+        },
+        {
+          "id": "scroll-progress-bar",
+          "title": "Scroll Progress Bar",
+          "path": "animations/scroll/scroll-progress-bar.html"
+        },
+        {
+          "id": "scroll-refresh",
+          "title": "Scroll Refresh",
+          "path": "animations/scroll/scroll-refresh.html"
+        },
+        {
+          "id": "scroll-reveal-stagger",
+          "title": "Scroll Reveal Stagger",
+          "path": "animations/scroll/scroll-reveal-stagger.html"
+        },
+        {
+          "id": "scroll-scrollto-element",
+          "title": "Scroll Scrollto Element",
+          "path": "animations/scroll/scroll-scrollto-element.html"
+        },
+        {
+          "id": "scroll-scrollto-horizontal",
+          "title": "Scroll Scrollto Horizontal",
+          "path": "animations/scroll/scroll-scrollto-horizontal.html"
+        },
+        {
+          "id": "scroll-scrollto-y",
+          "title": "Scroll Scrollto Y",
+          "path": "animations/scroll/scroll-scrollto-y.html"
+        },
+        {
+          "id": "scroll-scrub",
+          "title": "Scroll Scrub",
+          "path": "animations/scroll/scroll-scrub.html"
+        },
+        {
+          "id": "scroll-smoother-basic",
+          "title": "Scroll Smoother Basic",
+          "path": "animations/scroll/scroll-smoother-basic.html"
+        },
+        {
+          "id": "scroll-smoother-combined",
+          "title": "Scroll Smoother Combined",
+          "path": "animations/scroll/scroll-smoother-combined.html"
+        },
+        {
+          "id": "scroll-smoother-effects",
+          "title": "Scroll Smoother Effects",
+          "path": "animations/scroll/scroll-smoother-effects.html"
+        },
+        {
+          "id": "scroll-smoother-lag",
+          "title": "Scroll Smoother Lag",
+          "path": "animations/scroll/scroll-smoother-lag.html"
+        },
+        {
+          "id": "scroll-smoother-touch",
+          "title": "Scroll Smoother Touch",
+          "path": "animations/scroll/scroll-smoother-touch.html"
+        },
+        {
+          "id": "scroll-snap",
+          "title": "Scroll Snap",
+          "path": "animations/scroll/scroll-snap.html"
+        },
+        {
+          "id": "scroll-start-end-absolute",
+          "title": "Scroll Start End Absolute",
+          "path": "animations/scroll/scroll-start-end-absolute.html"
+        },
+        {
+          "id": "scroll-start-end-dynamic",
+          "title": "Scroll Start End Dynamic",
+          "path": "animations/scroll/scroll-start-end-dynamic.html"
+        },
+        {
+          "id": "scroll-start-end-percent",
+          "title": "Scroll Start End Percent",
+          "path": "animations/scroll/scroll-start-end-percent.html"
+        },
+        {
+          "id": "scroll-toggle-actions",
+          "title": "Scroll Toggle Actions",
+          "path": "animations/scroll/scroll-toggle-actions.html"
+        },
+        {
+          "id": "scroll-trigger-basic",
+          "title": "Scroll Trigger Basic",
+          "path": "animations/scroll/scroll-trigger-basic.html"
+        }
+      ]
+    },
+    {
+      "id": "svg",
+      "label": "SVG",
+      "emoji": "🎯",
+      "animations": [
+        {
+          "id": "svg-drawsvg-basic",
+          "title": "Svg Drawsvg Basic",
+          "path": "animations/svg/svg-drawsvg-basic.html"
+        },
+        {
+          "id": "svg-drawsvg-letter-outline",
+          "title": "Svg Drawsvg Letter Outline",
+          "path": "animations/svg/svg-drawsvg-letter-outline.html"
+        },
+        {
+          "id": "svg-drawsvg-logo-timeline",
+          "title": "Svg Drawsvg Logo Timeline",
+          "path": "animations/svg/svg-drawsvg-logo-timeline.html"
+        },
+        {
+          "id": "svg-drawsvg-partial",
+          "title": "Svg Drawsvg Partial",
+          "path": "animations/svg/svg-drawsvg-partial.html"
+        },
+        {
+          "id": "svg-drawsvg-reverse",
+          "title": "Svg Drawsvg Reverse",
+          "path": "animations/svg/svg-drawsvg-reverse.html"
+        },
+        {
+          "id": "svg-drawsvg-signature",
+          "title": "Svg Drawsvg Signature",
+          "path": "animations/svg/svg-drawsvg-signature.html"
+        },
+        {
+          "id": "svg-morphsvg-array",
+          "title": "Svg Morphsvg Array",
+          "path": "animations/svg/svg-morphsvg-array.html"
+        },
+        {
+          "id": "svg-morphsvg-basic",
+          "title": "Svg Morphsvg Basic",
+          "path": "animations/svg/svg-morphsvg-basic.html"
+        },
+        {
+          "id": "svg-morphsvg-callback",
+          "title": "Svg Morphsvg Callback",
+          "path": "animations/svg/svg-morphsvg-callback.html"
+        },
+        {
+          "id": "svg-morphsvg-complex",
+          "title": "Svg Morphsvg Complex",
+          "path": "animations/svg/svg-morphsvg-complex.html"
+        },
+        {
+          "id": "svg-morphsvg-shapeindex",
+          "title": "Svg Morphsvg Shapeindex",
+          "path": "animations/svg/svg-morphsvg-shapeindex.html"
+        },
+        {
+          "id": "svg-motionpath-autorotate",
+          "title": "Svg Motionpath Autorotate",
+          "path": "animations/svg/svg-motionpath-autorotate.html"
+        },
+        {
+          "id": "svg-motionpath-basic",
+          "title": "Svg Motionpath Basic",
+          "path": "animations/svg/svg-motionpath-basic.html"
+        },
+        {
+          "id": "svg-motionpath-ease",
+          "title": "Svg Motionpath Ease",
+          "path": "animations/svg/svg-motionpath-ease.html"
+        },
+        {
+          "id": "svg-motionpath-offset",
+          "title": "Svg Motionpath Offset",
+          "path": "animations/svg/svg-motionpath-offset.html"
+        },
+        {
+          "id": "svg-motionpath-scroll",
+          "title": "Svg Motionpath Scroll",
+          "path": "animations/svg/svg-motionpath-scroll.html"
+        },
+        {
+          "id": "svg-motionpath-timeline",
+          "title": "Svg Motionpath Timeline",
+          "path": "animations/svg/svg-motionpath-timeline.html"
+        }
+      ]
+    },
+    {
+      "id": "text",
+      "label": "Text",
+      "emoji": "📝",
+      "animations": [
+        {
+          "id": "text-scramble-basic",
+          "title": "Text Scramble Basic",
+          "path": "animations/text/text-scramble-basic.html"
+        },
+        {
+          "id": "text-scramble-charset",
+          "title": "Text Scramble Charset",
+          "path": "animations/text/text-scramble-charset.html"
+        },
+        {
+          "id": "text-scramble-custom",
+          "title": "Text Scramble Custom",
+          "path": "animations/text/text-scramble-custom.html"
+        },
+        {
+          "id": "text-scramble-multiple",
+          "title": "Text Scramble Multiple",
+          "path": "animations/text/text-scramble-multiple.html"
+        },
+        {
+          "id": "text-scramble-reverse",
+          "title": "Text Scramble Reverse",
+          "path": "animations/text/text-scramble-reverse.html"
+        },
+        {
+          "id": "text-scramble-timeline",
+          "title": "Text Scramble Timeline",
+          "path": "animations/text/text-scramble-timeline.html"
+        },
+        {
+          "id": "text-splittext-basic",
+          "title": "Text Splittext Basic",
+          "path": "animations/text/text-splittext-basic.html"
+        },
+        {
+          "id": "text-splittext-chars",
+          "title": "Text Splittext Chars",
+          "path": "animations/text/text-splittext-chars.html"
+        },
+        {
+          "id": "text-splittext-cleanup",
+          "title": "Text Splittext Cleanup",
+          "path": "animations/text/text-splittext-cleanup.html"
+        },
+        {
+          "id": "text-splittext-lines",
+          "title": "Text Splittext Lines",
+          "path": "animations/text/text-splittext-lines.html"
+        },
+        {
+          "id": "text-splittext-timeline",
+          "title": "Text Splittext Timeline",
+          "path": "animations/text/text-splittext-timeline.html"
+        },
+        {
+          "id": "text-splittext-word-wrap",
+          "title": "Text Splittext Word Wrap",
+          "path": "animations/text/text-splittext-word-wrap.html"
+        },
+        {
+          "id": "text-splittext-words",
+          "title": "Text Splittext Words",
+          "path": "animations/text/text-splittext-words.html"
+        },
+        {
+          "id": "text-textplugin-basic",
+          "title": "Text Textplugin Basic",
+          "path": "animations/text/text-textplugin-basic.html"
+        },
+        {
+          "id": "text-textplugin-callback",
+          "title": "Text Textplugin Callback",
+          "path": "animations/text/text-textplugin-callback.html"
+        },
+        {
+          "id": "text-textplugin-delimited",
+          "title": "Text Textplugin Delimited",
+          "path": "animations/text/text-textplugin-delimited.html"
+        },
+        {
+          "id": "text-textplugin-diff",
+          "title": "Text Textplugin Diff",
+          "path": "animations/text/text-textplugin-diff.html"
+        },
+        {
+          "id": "text-textplugin-html",
+          "title": "Text Textplugin Html",
+          "path": "animations/text/text-textplugin-html.html"
+        },
+        {
+          "id": "text-textplugin-number",
+          "title": "Text Textplugin Number",
+          "path": "animations/text/text-textplugin-number.html"
+        }
+      ]
+    },
+    {
+      "id": "interaction",
+      "label": "Interacción",
+      "emoji": "🖱️",
+      "animations": [
+        {
+          "id": "interaction-draggable-allowContextMenu",
+          "title": "Interaction Draggable Allowcontextmenu",
+          "path": "animations/interaction/interaction-draggable-allowContextMenu.html"
+        },
+        {
+          "id": "interaction-draggable-basic",
+          "title": "Interaction Draggable Basic",
+          "path": "animations/interaction/interaction-draggable-basic.html"
+        },
+        {
+          "id": "interaction-draggable-bounds",
+          "title": "Interaction Draggable Bounds",
+          "path": "animations/interaction/interaction-draggable-bounds.html"
+        },
+        {
+          "id": "interaction-draggable-cursor",
+          "title": "Interaction Draggable Cursor",
+          "path": "animations/interaction/interaction-draggable-cursor.html"
+        },
+        {
+          "id": "interaction-draggable-inertia",
+          "title": "Interaction Draggable Inertia",
+          "path": "animations/interaction/interaction-draggable-inertia.html"
+        },
+        {
+          "id": "interaction-draggable-momentum",
+          "title": "Interaction Draggable Momentum",
+          "path": "animations/interaction/interaction-draggable-momentum.html"
+        },
+        {
+          "id": "interaction-draggable-onDrag",
+          "title": "Interaction Draggable Ondrag",
+          "path": "animations/interaction/interaction-draggable-onDrag.html"
+        },
+        {
+          "id": "interaction-draggable-snap",
+          "title": "Interaction Draggable Snap",
+          "path": "animations/interaction/interaction-draggable-snap.html"
+        },
+        {
+          "id": "interaction-draggable-threshold",
+          "title": "Interaction Draggable Threshold",
+          "path": "animations/interaction/interaction-draggable-threshold.html"
+        },
+        {
+          "id": "interaction-draggable-zIndex",
+          "title": "Interaction Draggable Zindex",
+          "path": "animations/interaction/interaction-draggable-zIndex.html"
+        },
+        {
+          "id": "interaction-flip-absolute",
+          "title": "Interaction Flip Absolute",
+          "path": "animations/interaction/interaction-flip-absolute.html"
+        },
+        {
+          "id": "interaction-flip-basic",
+          "title": "Interaction Flip Basic",
+          "path": "animations/interaction/interaction-flip-basic.html"
+        },
+        {
+          "id": "interaction-flip-batch",
+          "title": "Interaction Flip Batch",
+          "path": "animations/interaction/interaction-flip-batch.html"
+        },
+        {
+          "id": "interaction-flip-smoothChild",
+          "title": "Interaction Flip Smoothchild",
+          "path": "animations/interaction/interaction-flip-smoothChild.html"
+        },
+        {
+          "id": "interaction-flip-stagger",
+          "title": "Interaction Flip Stagger",
+          "path": "animations/interaction/interaction-flip-stagger.html"
+        },
+        {
+          "id": "interaction-flip-timeline",
+          "title": "Interaction Flip Timeline",
+          "path": "animations/interaction/interaction-flip-timeline.html"
+        },
+        {
+          "id": "interaction-observer-pointer",
+          "title": "Interaction Observer Pointer",
+          "path": "animations/interaction/interaction-observer-pointer.html"
+        },
+        {
+          "id": "interaction-observer-thresholdX",
+          "title": "Interaction Observer Thresholdx",
+          "path": "animations/interaction/interaction-observer-thresholdX.html"
+        },
+        {
+          "id": "interaction-observer-thresholdY",
+          "title": "Interaction Observer Thresholdy",
+          "path": "animations/interaction/interaction-observer-thresholdY.html"
+        },
+        {
+          "id": "interaction-observer-tolerance",
+          "title": "Interaction Observer Tolerance",
+          "path": "animations/interaction/interaction-observer-tolerance.html"
+        },
+        {
+          "id": "interaction-observer-touch",
+          "title": "Interaction Observer Touch",
+          "path": "animations/interaction/interaction-observer-touch.html"
+        },
+        {
+          "id": "interaction-observer-velocityTrack",
+          "title": "Interaction Observer Velocitytrack",
+          "path": "animations/interaction/interaction-observer-velocityTrack.html"
+        },
+        {
+          "id": "interaction-observer-wheel",
+          "title": "Interaction Observer Wheel",
+          "path": "animations/interaction/interaction-observer-wheel.html"
+        },
+        {
+          "id": "interaction-physics-acceleration",
+          "title": "Interaction Physics Acceleration",
+          "path": "animations/interaction/interaction-physics-acceleration.html"
+        },
+        {
+          "id": "interaction-physics-basic",
+          "title": "Interaction Physics Basic",
+          "path": "animations/interaction/interaction-physics-basic.html"
+        },
+        {
+          "id": "interaction-physics-bounce",
+          "title": "Interaction Physics Bounce",
+          "path": "animations/interaction/interaction-physics-bounce.html"
+        },
+        {
+          "id": "interaction-physics-custom",
+          "title": "Interaction Physics Custom",
+          "path": "animations/interaction/interaction-physics-custom.html"
+        },
+        {
+          "id": "interaction-physics-friction",
+          "title": "Interaction Physics Friction",
+          "path": "animations/interaction/interaction-physics-friction.html"
+        },
+        {
+          "id": "interaction-physics-gravity",
+          "title": "Interaction Physics Gravity",
+          "path": "animations/interaction/interaction-physics-gravity.html"
+        },
+        {
+          "id": "interaction-physics-velocity",
+          "title": "Interaction Physics Velocity",
+          "path": "animations/interaction/interaction-physics-velocity.html"
+        }
+      ]
+    },
+    {
+      "id": "3d",
+      "label": "3D",
+      "emoji": "🎮",
+      "animations": [
+        {
+          "id": "3d-pixi-animation",
+          "title": "3D Pixi Animation",
+          "path": "animations/3d/3d-pixi-animation.html"
+        },
+        {
+          "id": "3d-pixi-basic",
+          "title": "3D Pixi Basic",
+          "path": "animations/3d/3d-pixi-basic.html"
+        },
+        {
+          "id": "3d-pixi-combined",
+          "title": "3D Pixi Combined",
+          "path": "animations/3d/3d-pixi-combined.html"
+        },
+        {
+          "id": "3d-pixi-filter",
+          "title": "3D Pixi Filter",
+          "path": "animations/3d/3d-pixi-filter.html"
+        },
+        {
+          "id": "3d-pixi-graphics",
+          "title": "3D Pixi Graphics",
+          "path": "animations/3d/3d-pixi-graphics.html"
+        },
+        {
+          "id": "3d-pixi-gsap",
+          "title": "3D Pixi Gsap",
+          "path": "animations/3d/3d-pixi-gsap.html"
+        },
+        {
+          "id": "3d-pixi-performance",
+          "title": "3D Pixi Performance",
+          "path": "animations/3d/3d-pixi-performance.html"
+        },
+        {
+          "id": "3d-pixi-scroll",
+          "title": "3D Pixi Scroll",
+          "path": "animations/3d/3d-pixi-scroll.html"
+        },
+        {
+          "id": "3d-pixi-sprite",
+          "title": "3D Pixi Sprite",
+          "path": "animations/3d/3d-pixi-sprite.html"
+        },
+        {
+          "id": "3d-pixi-text",
+          "title": "3D Pixi Text",
+          "path": "animations/3d/3d-pixi-text.html"
+        },
+        {
+          "id": "3d-three-animation",
+          "title": "3D Three Animation",
+          "path": "animations/3d/3d-three-animation.html"
+        },
+        {
+          "id": "3d-three-basic",
+          "title": "3D Three Basic",
+          "path": "animations/3d/3d-three-basic.html"
+        },
+        {
+          "id": "3d-three-camera",
+          "title": "3D Three Camera",
+          "path": "animations/3d/3d-three-camera.html"
+        },
+        {
+          "id": "3d-three-combined",
+          "title": "3D Three Combined",
+          "path": "animations/3d/3d-three-combined.html"
+        },
+        {
+          "id": "3d-three-cube",
+          "title": "3D Three Cube",
+          "path": "animations/3d/3d-three-cube.html"
+        },
+        {
+          "id": "3d-three-gsap-timeline",
+          "title": "3D Three Gsap Timeline",
+          "path": "animations/3d/3d-three-gsap-timeline.html"
+        },
+        {
+          "id": "3d-three-light",
+          "title": "3D Three Light",
+          "path": "animations/3d/3d-three-light.html"
+        },
+        {
+          "id": "3d-three-rotation",
+          "title": "3D Three Rotation",
+          "path": "animations/3d/3d-three-rotation.html"
+        },
+        {
+          "id": "3d-three-scroll",
+          "title": "3D Three Scroll",
+          "path": "animations/3d/3d-three-scroll.html"
+        },
+        {
+          "id": "3d-three-texture",
+          "title": "3D Three Texture",
+          "path": "animations/3d/3d-three-texture.html"
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "label": "Advanced",
+      "emoji": "⚡",
+      "animations": [
+        {
+          "id": "advanced-matchmedia-basic",
+          "title": "Advanced Matchmedia Basic",
+          "path": "animations/advanced/advanced-matchmedia-basic.html"
+        },
+        {
+          "id": "advanced-matchmedia-combined",
+          "title": "Advanced Matchmedia Combined",
+          "path": "animations/advanced/advanced-matchmedia-combined.html"
+        },
+        {
+          "id": "advanced-matchmedia-desktop",
+          "title": "Advanced Matchmedia Desktop",
+          "path": "animations/advanced/advanced-matchmedia-desktop.html"
+        },
+        {
+          "id": "advanced-matchmedia-gsap",
+          "title": "Advanced Matchmedia Gsap",
+          "path": "animations/advanced/advanced-matchmedia-gsap.html"
+        },
+        {
+          "id": "advanced-matchmedia-mobile",
+          "title": "Advanced Matchmedia Mobile",
+          "path": "animations/advanced/advanced-matchmedia-mobile.html"
+        },
+        {
+          "id": "advanced-matchmedia-orientation",
+          "title": "Advanced Matchmedia Orientation",
+          "path": "animations/advanced/advanced-matchmedia-orientation.html"
+        },
+        {
+          "id": "advanced-matchmedia-tablet",
+          "title": "Advanced Matchmedia Tablet",
+          "path": "animations/advanced/advanced-matchmedia-tablet.html"
+        },
+        {
+          "id": "advanced-react-basic",
+          "title": "Advanced React Basic",
+          "path": "animations/advanced/advanced-react-basic.html"
+        },
+        {
+          "id": "advanced-react-cleanup",
+          "title": "Advanced React Cleanup",
+          "path": "animations/advanced/advanced-react-cleanup.html"
+        },
+        {
+          "id": "advanced-react-hook",
+          "title": "Advanced React Hook",
+          "path": "animations/advanced/advanced-react-hook.html"
+        },
+        {
+          "id": "advanced-react-performance",
+          "title": "Advanced React Performance",
+          "path": "animations/advanced/advanced-react-performance.html"
+        },
+        {
+          "id": "advanced-react-scrollTrigger",
+          "title": "Advanced React Scrolltrigger",
+          "path": "animations/advanced/advanced-react-scrollTrigger.html"
+        },
+        {
+          "id": "advanced-react-useEffect",
+          "title": "Advanced React Useeffect",
+          "path": "animations/advanced/advanced-react-useEffect.html"
+        },
+        {
+          "id": "advanced-react-useRef",
+          "title": "Advanced React Useref",
+          "path": "animations/advanced/advanced-react-useRef.html"
+        },
+        {
+          "id": "advanced-utils-gsap-delayedCall",
+          "title": "Advanced Utils Gsap Delayedcall",
+          "path": "animations/advanced/advanced-utils-gsap-delayedCall.html"
+        },
+        {
+          "id": "advanced-utils-gsap-from",
+          "title": "Advanced Utils Gsap From",
+          "path": "animations/advanced/advanced-utils-gsap-from.html"
+        },
+        {
+          "id": "advanced-utils-gsap-fromto",
+          "title": "Advanced Utils Gsap Fromto",
+          "path": "animations/advanced/advanced-utils-gsap-fromto.html"
+        },
+        {
+          "id": "advanced-utils-gsap-getProperty",
+          "title": "Advanced Utils Gsap Getproperty",
+          "path": "animations/advanced/advanced-utils-gsap-getProperty.html"
+        },
+        {
+          "id": "advanced-utils-gsap-quickSetter",
+          "title": "Advanced Utils Gsap Quicksetter",
+          "path": "animations/advanced/advanced-utils-gsap-quickSetter.html"
+        },
+        {
+          "id": "advanced-utils-gsap-quickTo",
+          "title": "Advanced Utils Gsap Quickto",
+          "path": "animations/advanced/advanced-utils-gsap-quickTo.html"
+        },
+        {
+          "id": "advanced-utils-gsap-set",
+          "title": "Advanced Utils Gsap Set",
+          "path": "animations/advanced/advanced-utils-gsap-set.html"
+        },
+        {
+          "id": "advanced-utils-gsap-to",
+          "title": "Advanced Utils Gsap To",
+          "path": "animations/advanced/advanced-utils-gsap-to.html"
+        }
+      ]
+    },
+    {
+      "id": "patterns",
+      "label": "Patterns UI",
+      "emoji": "🎨",
+      "animations": [
+        {
+          "id": "pattern-button-pulse",
+          "title": "Pattern Button Pulse",
+          "path": "animations/patterns/pattern-button-pulse.html"
+        },
+        {
+          "id": "pattern-button-ripple",
+          "title": "Pattern Button Ripple",
+          "path": "animations/patterns/pattern-button-ripple.html"
+        },
+        {
+          "id": "pattern-card-flip",
+          "title": "Pattern Card Flip",
+          "path": "animations/patterns/pattern-card-flip.html"
+        },
+        {
+          "id": "pattern-card-hover",
+          "title": "Pattern Card Hover",
+          "path": "animations/patterns/pattern-card-hover.html"
+        },
+        {
+          "id": "pattern-drawer-collapse",
+          "title": "Pattern Drawer Collapse",
+          "path": "animations/patterns/pattern-drawer-collapse.html"
+        },
+        {
+          "id": "pattern-drawer-slide",
+          "title": "Pattern Drawer Slide",
+          "path": "animations/patterns/pattern-drawer-slide.html"
+        },
+        {
+          "id": "pattern-dropdown-expand",
+          "title": "Pattern Dropdown Expand",
+          "path": "animations/patterns/pattern-dropdown-expand.html"
+        },
+        {
+          "id": "pattern-dropdown-items",
+          "title": "Pattern Dropdown Items",
+          "path": "animations/patterns/pattern-dropdown-items.html"
+        },
+        {
+          "id": "pattern-loader-progress",
+          "title": "Pattern Loader Progress",
+          "path": "animations/patterns/pattern-loader-progress.html"
+        },
+        {
+          "id": "pattern-loader-spinner",
+          "title": "Pattern Loader Spinner",
+          "path": "animations/patterns/pattern-loader-spinner.html"
+        },
+        {
+          "id": "pattern-modal-enter",
+          "title": "Pattern Modal Enter",
+          "path": "animations/patterns/pattern-modal-enter.html"
+        },
+        {
+          "id": "pattern-modal-exit",
+          "title": "Pattern Modal Exit",
+          "path": "animations/patterns/pattern-modal-exit.html"
+        },
+        {
+          "id": "pattern-nav-slide",
+          "title": "Pattern Nav Slide",
+          "path": "animations/patterns/pattern-nav-slide.html"
+        },
+        {
+          "id": "pattern-nav-underline",
+          "title": "Pattern Nav Underline",
+          "path": "animations/patterns/pattern-nav-underline.html"
+        },
+        {
+          "id": "pattern-skeleton-load",
+          "title": "Pattern Skeleton Load",
+          "path": "animations/patterns/pattern-skeleton-load.html"
+        },
+        {
+          "id": "pattern-skeleton-shimmer",
+          "title": "Pattern Skeleton Shimmer",
+          "path": "animations/patterns/pattern-skeleton-shimmer.html"
+        },
+        {
+          "id": "pattern-tab-indicator",
+          "title": "Pattern Tab Indicator",
+          "path": "animations/patterns/pattern-tab-indicator.html"
+        },
+        {
+          "id": "pattern-tab-switch",
+          "title": "Pattern Tab Switch",
+          "path": "animations/patterns/pattern-tab-switch.html"
+        },
+        {
+          "id": "pattern-toast-dismiss",
+          "title": "Pattern Toast Dismiss",
+          "path": "animations/patterns/pattern-toast-dismiss.html"
+        },
+        {
+          "id": "pattern-toast-popup",
+          "title": "Pattern Toast Popup",
+          "path": "animations/patterns/pattern-toast-popup.html"
+        }
+      ]
+    }
+  ]
+}

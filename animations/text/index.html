@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>Text - GSAP Visual Codex</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-1: #0d0f10;
+            --bg-2: #1a1d20;
+            --text-1: #e4e8ec;
+            --text-2: #a1a9b3;
+            --accent: #88ce02;
+            --border-1: #2d3339;
+            --radius: 8px;
+            --radius-lg: 12px;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        body { font-family: var(--font-body); background: var(--bg-1); color: var(--text-1); padding: 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { margin-bottom: 3rem; }
+        .header h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; }
+        .back { display: inline-block; color: var(--text-2); text-decoration: none; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1px solid var(--border-1); border-radius: var(--radius); transition: all 0.3s; }
+        .back:hover { color: var(--accent); border-color: var(--accent); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .item { background: var(--bg-2); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-1); transition: all 0.3s; }
+        .item:hover { transform: translateY(-2px); border-color: var(--accent); }
+        .item a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .item a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back">← Volver al inicio</a>
+        <div class="header">
+            <h1>Text</h1>
+            <p style="color: var(--text-2);">19 animaciones disponibles</p>
+        </div>
+        <div class="grid">
+            <div class="item"><a href="text-scramble-basic.html">Text Scramble Basic</a></div>
+            <div class="item"><a href="text-scramble-charset.html">Text Scramble Charset</a></div>
+            <div class="item"><a href="text-scramble-custom.html">Text Scramble Custom</a></div>
+            <div class="item"><a href="text-scramble-multiple.html">Text Scramble Multiple</a></div>
+            <div class="item"><a href="text-scramble-reverse.html">Text Scramble Reverse</a></div>
+            <div class="item"><a href="text-scramble-timeline.html">Text Scramble Timeline</a></div>
+            <div class="item"><a href="text-splittext-basic.html">Text Splittext Basic</a></div>
+            <div class="item"><a href="text-splittext-chars.html">Text Splittext Chars</a></div>
+            <div class="item"><a href="text-splittext-cleanup.html">Text Splittext Cleanup</a></div>
+            <div class="item"><a href="text-splittext-lines.html">Text Splittext Lines</a></div>
+            <div class="item"><a href="text-splittext-timeline.html">Text Splittext Timeline</a></div>
+            <div class="item"><a href="text-splittext-word-wrap.html">Text Splittext Word Wrap</a></div>
+            <div class="item"><a href="text-splittext-words.html">Text Splittext Words</a></div>
+            <div class="item"><a href="text-textplugin-basic.html">Text Textplugin Basic</a></div>
+            <div class="item"><a href="text-textplugin-callback.html">Text Textplugin Callback</a></div>
+            <div class="item"><a href="text-textplugin-delimited.html">Text Textplugin Delimited</a></div>
+            <div class="item"><a href="text-textplugin-diff.html">Text Textplugin Diff</a></div>
+            <div class="item"><a href="text-textplugin-html.html">Text Textplugin Html</a></div>
+            <div class="item"><a href="text-textplugin-number.html">Text Textplugin Number</a></div>
+        </div>
+    </div>
+</body>
+</html>

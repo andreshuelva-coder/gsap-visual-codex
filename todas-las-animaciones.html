@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+  <title>GSAP Visual Codex — Todas las Animaciones</title>
+  <style>* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --bg-1: #0d0f10; --bg-2: #1a1d20; --bg-3: #252a30; --text-1: #e4e8ec; --text-2: #a1a9b3; --accent: #88ce02; --coral: #ff5e7a; --border-1: #2d3339; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg-1); color: var(--text-1); }
+.page { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+h1 { font-size: 2.5rem; color: var(--accent); margin-bottom: 0.5rem; font-family: 'JetBrains Mono', monospace; }
+.subtitle { color: var(--text-2); margin-bottom: 2rem; font-size: 1.1rem; }
+.category { margin-bottom: 3rem; }
+.category h2 { font-size: 1.5rem; color: var(--coral); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-1); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+.card { background: var(--bg-2); border: 1px solid var(--border-1); border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: all 0.3s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+.card:hover { border-color: var(--accent); box-shadow: 0 0 20px rgba(136,206,2,0.2); transform: translateY(-2px); }
+.card h3 { color: var(--accent); font-size: 1rem; margin-bottom: 0.5rem; font-family: 'JetBrains Mono', monospace; }
+.card p { color: var(--text-2); font-size: 0.9rem; flex: 1; }
+.badge { display: inline-block; background: var(--bg-3); border: 1px solid var(--border-1); border-radius: 4px; padding: 0.25rem 0.75rem; font-size: 0.75rem; color: var(--accent); margin-top: 0.75rem; font-weight: 600; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 3rem; }
+.stat { background: var(--bg-2); border: 1px solid var(--border-1); border-radius: 12px; padding: 1.5rem; text-align: center; }
+.stat-number { font-size: 2rem; color: var(--accent); font-weight: 900; }
+.stat-label { color: var(--text-2); font-size: 0.9rem; margin-top: 0.5rem; }</style>
+</head>
+<body>
+  <div class="page">
+    <h1>🎨 GSAP Visual Codex</h1>
+    <p class="subtitle">Aprende GSAP viendo, no leyendo — 243 animaciones interactivas</p>
+    
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">243</div>
+        <div class="stat-label">Animaciones</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">11</div>
+        <div class="stat-label">Categorías</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Funcional</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Aprendizaje</div>
+      </div>
+    </div>
+    
+    <div class="category">
+      <h2>3D (20 animaciones)</h2>
+      <div class="grid">
+        <a href="animations/3d/3d-pixi-animation.html" class="card">
+          <h3>3D Pixi Animation</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-pixi-basic.html" class="card">
+          <h3>3D Pixi Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-pixi-combined.html" class="card">
+          <h3>3D Pixi Combined</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-pixi-filter.html" class="card">
+          <h3>3D Pixi Filter</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-pixi-graphics.html" class="card">
+          <h3>3D Pixi Graphics</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-pixi-gsap.html" class="card">
+          <h3>3D Pixi Gsap</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-pixi-performance.html" class="card">
+          <h3>3D Pixi Performance</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-pixi-scroll.html" class="card">
+          <h3>3D Pixi Scroll</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-pixi-sprite.html" class="card">
+          <h3>3D Pixi Sprite</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-pixi-text.html" class="card">
+          <h3>3D Pixi Text</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-three-animation.html" class="card">
+          <h3>3D Three Animation</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-three-basic.html" class="card">
+          <h3>3D Three Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-three-camera.html" class="card">
+          <h3>3D Three Camera</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-three-combined.html" class="card">
+          <h3>3D Three Combined</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-three-cube.html" class="card">
+          <h3>3D Three Cube</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-three-gsap-timeline.html" class="card">
+          <h3>3D Three Gsap Timeline</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-three-light.html" class="card">
+          <h3>3D Three Light</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-three-rotation.html" class="card">
+          <h3>3D Three Rotation</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-three-scroll.html" class="card">
+          <h3>3D Three Scroll</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/3d/3d-three-texture.html" class="card">
+          <h3>3D Three Texture</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+      </div>
+    </div>
+    <div class="category">
+      <h2>ADVANCED (27 animaciones)</h2>
+      <div class="grid">
+        <a href="animations/advanced/advanced-matchmedia-basic.html" class="card">
+          <h3>Advanced Matchmedia Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-matchmedia-combined.html" class="card">
+          <h3>Advanced Matchmedia Combined</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-matchmedia-desktop.html" class="card">
+          <h3>Advanced Matchmedia Desktop</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-matchmedia-gsap.html" class="card">
+          <h3>Advanced Matchmedia Gsap</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-matchmedia-mobile.html" class="card">
+          <h3>Advanced Matchmedia Mobile</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-matchmedia-orientation.html" class="card">
+          <h3>Advanced Matchmedia Orientation</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-matchmedia-tablet.html" class="card">
+          <h3>Advanced Matchmedia Tablet</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-react-basic.html" class="card">
+          <h3>Advanced React Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-react-cleanup.html" class="card">
+          <h3>Advanced React Cleanup</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-react-hook.html" class="card">
+          <h3>Advanced React Hook</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-react-performance.html" class="card">
+          <h3>Advanced React Performance</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-react-scrollTrigger.html" class="card">
+          <h3>Advanced React Scrolltrigger</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-react-useEffect.html" class="card">
+          <h3>Advanced React Useeffect</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-react-useRef.html" class="card">
+          <h3>Advanced React Useref</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-react-useref.html" class="card">
+          <h3>Advanced React Useref</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-utils-gsap-delayedCall.html" class="card">
+          <h3>Advanced Utils Gsap Delayedcall</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-utils-gsap-delayedcall.html" class="card">
+          <h3>Advanced Utils Gsap Delayedcall</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-utils-gsap-from.html" class="card">
+          <h3>Advanced Utils Gsap From</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-utils-gsap-fromto.html" class="card">
+          <h3>Advanced Utils Gsap Fromto</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-utils-gsap-getProperty.html" class="card">
+          <h3>Advanced Utils Gsap Getproperty</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-utils-gsap-getproperty.html" class="card">
+          <h3>Advanced Utils Gsap Getproperty</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-utils-gsap-quickSetter.html" class="card">
+          <h3>Advanced Utils Gsap Quicksetter</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-utils-gsap-quickTo.html" class="card">
+          <h3>Advanced Utils Gsap Quickto</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-utils-gsap-quicksetter.html" class="card">
+          <h3>Advanced Utils Gsap Quicksetter</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-utils-gsap-quickto.html" class="card">
+          <h3>Advanced Utils Gsap Quickto</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-utils-gsap-set.html" class="card">
+          <h3>Advanced Utils Gsap Set</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/advanced/advanced-utils-gsap-to.html" class="card">
+          <h3>Advanced Utils Gsap To</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+      </div>
+    </div>
+    <div class="category">
+      <h2>EASING (30 animaciones)</h2>
+      <div class="grid">
+        <a href="animations/easing/ease-back-in.html" class="card">
+          <h3>Ease Back In</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-back.html" class="card">
+          <h3>Ease Back</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-bounce.html" class="card">
+          <h3>Ease Bounce</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-bouncein.html" class="card">
+          <h3>Ease Bouncein</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-bounceinout.html" class="card">
+          <h3>Ease Bounceinout</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-circ-in.html" class="card">
+          <h3>Ease Circ In</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-circ.html" class="card">
+          <h3>Ease Circ</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-cubic.html" class="card">
+          <h3>Ease Cubic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-custom.html" class="card">
+          <h3>Ease Custom</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-custombounce.html" class="card">
+          <h3>Ease Custombounce</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-customwiggle.html" class="card">
+          <h3>Ease Customwiggle</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-elastic.html" class="card">
+          <h3>Ease Elastic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-explorer.html" class="card">
+          <h3>Ease Explorer</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-expo.html" class="card">
+          <h3>Ease Expo</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-exposcale.html" class="card">
+          <h3>Ease Exposcale</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-linear.html" class="card">
+          <h3>Ease Linear</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-log.html" class="card">
+          <h3>Ease Log</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-power.html" class="card">
+          <h3>Ease Power</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-power1in.html" class="card">
+          <h3>Ease Power1In</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-power1out.html" class="card">
+          <h3>Ease Power1Out</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-power3out.html" class="card">
+          <h3>Ease Power3Out</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-power4out.html" class="card">
+          <h3>Ease Power4Out</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-quad-out.html" class="card">
+          <h3>Ease Quad Out</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-quad.html" class="card">
+          <h3>Ease Quad</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-quart.html" class="card">
+          <h3>Ease Quart</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-quint.html" class="card">
+          <h3>Ease Quint</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-rough.html" class="card">
+          <h3>Ease Rough</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-sine.html" class="card">
+          <h3>Ease Sine</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-slowmo.html" class="card">
+          <h3>Ease Slowmo</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/easing/ease-steps.html" class="card">
+          <h3>Ease Steps</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+      </div>
+    </div>
+    <div class="category">
+      <h2>FUNDAMENTOS (12 animaciones)</h2>
+      <div class="grid">
+        <a href="animations/fundamentos/gsap-context.html" class="card">
+          <h3>Gsap Context</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/fundamentos/gsap-delayedcall.html" class="card">
+          <h3>Gsap Delayedcall</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/fundamentos/gsap-effects.html" class="card">
+          <h3>Gsap Effects</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/fundamentos/gsap-from.html" class="card">
+          <h3>Gsap From</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/fundamentos/gsap-fromto.html" class="card">
+          <h3>Gsap Fromto</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/fundamentos/gsap-getproperty.html" class="card">
+          <h3>Gsap Getproperty</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/fundamentos/gsap-killtweensof.html" class="card">
+          <h3>Gsap Killtweensof</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/fundamentos/gsap-quicksetter.html" class="card">
+          <h3>Gsap Quicksetter</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/fundamentos/gsap-quickto.html" class="card">
+          <h3>Gsap Quickto</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/fundamentos/gsap-set.html" class="card">
+          <h3>Gsap Set</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/fundamentos/gsap-timeline.html" class="card">
+          <h3>Gsap Timeline</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/fundamentos/gsap-to.html" class="card">
+          <h3>Gsap To</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+      </div>
+    </div>
+    <div class="category">
+      <h2>INTERACTION (37 animaciones)</h2>
+      <div class="grid">
+        <a href="animations/interaction/interaction-draggable-allowContextMenu.html" class="card">
+          <h3>Interaction Draggable Allowcontextmenu</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-draggable-allowcontextmenu.html" class="card">
+          <h3>Interaction Draggable Allowcontextmenu</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-draggable-basic.html" class="card">
+          <h3>Interaction Draggable Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-draggable-bounds.html" class="card">
+          <h3>Interaction Draggable Bounds</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-draggable-cursor.html" class="card">
+          <h3>Interaction Draggable Cursor</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-draggable-inertia.html" class="card">
+          <h3>Interaction Draggable Inertia</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-draggable-momentum.html" class="card">
+          <h3>Interaction Draggable Momentum</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-draggable-onDrag.html" class="card">
+          <h3>Interaction Draggable Ondrag</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-draggable-ondrag.html" class="card">
+          <h3>Interaction Draggable Ondrag</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-draggable-snap.html" class="card">
+          <h3>Interaction Draggable Snap</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-draggable-threshold.html" class="card">
+          <h3>Interaction Draggable Threshold</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-draggable-zIndex.html" class="card">
+          <h3>Interaction Draggable Zindex</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-draggable-zindex.html" class="card">
+          <h3>Interaction Draggable Zindex</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-flip-absolute.html" class="card">
+          <h3>Interaction Flip Absolute</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-flip-basic.html" class="card">
+          <h3>Interaction Flip Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-flip-batch.html" class="card">
+          <h3>Interaction Flip Batch</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-flip-smoothChild.html" class="card">
+          <h3>Interaction Flip Smoothchild</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-flip-smoothchild.html" class="card">
+          <h3>Interaction Flip Smoothchild</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-flip-stagger.html" class="card">
+          <h3>Interaction Flip Stagger</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-flip-timeline.html" class="card">
+          <h3>Interaction Flip Timeline</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-observer-pointer.html" class="card">
+          <h3>Interaction Observer Pointer</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-observer-thresholdX.html" class="card">
+          <h3>Interaction Observer Thresholdx</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-observer-thresholdY.html" class="card">
+          <h3>Interaction Observer Thresholdy</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-observer-thresholdx.html" class="card">
+          <h3>Interaction Observer Thresholdx</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-observer-thresholdy.html" class="card">
+          <h3>Interaction Observer Thresholdy</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-observer-tolerance.html" class="card">
+          <h3>Interaction Observer Tolerance</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-observer-touch.html" class="card">
+          <h3>Interaction Observer Touch</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-observer-velocityTrack.html" class="card">
+          <h3>Interaction Observer Velocitytrack</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-observer-velocitytrack.html" class="card">
+          <h3>Interaction Observer Velocitytrack</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-observer-wheel.html" class="card">
+          <h3>Interaction Observer Wheel</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-physics-acceleration.html" class="card">
+          <h3>Interaction Physics Acceleration</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-physics-basic.html" class="card">
+          <h3>Interaction Physics Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-physics-bounce.html" class="card">
+          <h3>Interaction Physics Bounce</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-physics-custom.html" class="card">
+          <h3>Interaction Physics Custom</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-physics-friction.html" class="card">
+          <h3>Interaction Physics Friction</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-physics-gravity.html" class="card">
+          <h3>Interaction Physics Gravity</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/interaction/interaction-physics-velocity.html" class="card">
+          <h3>Interaction Physics Velocity</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+      </div>
+    </div>
+    <div class="category">
+      <h2>PATTERNS (20 animaciones)</h2>
+      <div class="grid">
+        <a href="animations/patterns/pattern-button-pulse.html" class="card">
+          <h3>Pattern Button Pulse</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-button-ripple.html" class="card">
+          <h3>Pattern Button Ripple</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-card-flip.html" class="card">
+          <h3>Pattern Card Flip</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-card-hover.html" class="card">
+          <h3>Pattern Card Hover</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-drawer-collapse.html" class="card">
+          <h3>Pattern Drawer Collapse</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-drawer-slide.html" class="card">
+          <h3>Pattern Drawer Slide</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-dropdown-expand.html" class="card">
+          <h3>Pattern Dropdown Expand</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-dropdown-items.html" class="card">
+          <h3>Pattern Dropdown Items</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-loader-progress.html" class="card">
+          <h3>Pattern Loader Progress</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-loader-spinner.html" class="card">
+          <h3>Pattern Loader Spinner</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-modal-enter.html" class="card">
+          <h3>Pattern Modal Enter</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-modal-exit.html" class="card">
+          <h3>Pattern Modal Exit</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-nav-slide.html" class="card">
+          <h3>Pattern Nav Slide</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-nav-underline.html" class="card">
+          <h3>Pattern Nav Underline</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-skeleton-load.html" class="card">
+          <h3>Pattern Skeleton Load</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-skeleton-shimmer.html" class="card">
+          <h3>Pattern Skeleton Shimmer</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-tab-indicator.html" class="card">
+          <h3>Pattern Tab Indicator</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-tab-switch.html" class="card">
+          <h3>Pattern Tab Switch</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-toast-dismiss.html" class="card">
+          <h3>Pattern Toast Dismiss</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/patterns/pattern-toast-popup.html" class="card">
+          <h3>Pattern Toast Popup</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+      </div>
+    </div>
+    <div class="category">
+      <h2>SCROLL (32 animaciones)</h2>
+      <div class="grid">
+        <a href="animations/scroll/scroll-batch.html" class="card">
+          <h3>Scroll Batch</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-callbacks.html" class="card">
+          <h3>Scroll Callbacks</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-flip.html" class="card">
+          <h3>Scroll Flip</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-horizontal-pin.html" class="card">
+          <h3>Scroll Horizontal Pin</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-horizontal.html" class="card">
+          <h3>Scroll Horizontal</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-image-sequence.html" class="card">
+          <h3>Scroll Image Sequence</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-indicator.html" class="card">
+          <h3>Scroll Indicator</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-markers.html" class="card">
+          <h3>Scroll Markers</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-parallax-multi.html" class="card">
+          <h3>Scroll Parallax Multi</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-parallax.html" class="card">
+          <h3>Scroll Parallax</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-pin-section.html" class="card">
+          <h3>Scroll Pin Section</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-pin-spacing.html" class="card">
+          <h3>Scroll Pin Spacing</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-pin-timeline.html" class="card">
+          <h3>Scroll Pin Timeline</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-pin.html" class="card">
+          <h3>Scroll Pin</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-progress-bar.html" class="card">
+          <h3>Scroll Progress Bar</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-refresh.html" class="card">
+          <h3>Scroll Refresh</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-reveal-stagger.html" class="card">
+          <h3>Scroll Reveal Stagger</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-scrollto-element.html" class="card">
+          <h3>Scroll Scrollto Element</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-scrollto-horizontal.html" class="card">
+          <h3>Scroll Scrollto Horizontal</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-scrollto-y.html" class="card">
+          <h3>Scroll Scrollto Y</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-scrub.html" class="card">
+          <h3>Scroll Scrub</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-smoother-basic.html" class="card">
+          <h3>Scroll Smoother Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-smoother-combined.html" class="card">
+          <h3>Scroll Smoother Combined</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-smoother-effects.html" class="card">
+          <h3>Scroll Smoother Effects</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-smoother-lag.html" class="card">
+          <h3>Scroll Smoother Lag</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-smoother-touch.html" class="card">
+          <h3>Scroll Smoother Touch</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-snap.html" class="card">
+          <h3>Scroll Snap</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-start-end-absolute.html" class="card">
+          <h3>Scroll Start End Absolute</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-start-end-dynamic.html" class="card">
+          <h3>Scroll Start End Dynamic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-start-end-percent.html" class="card">
+          <h3>Scroll Start End Percent</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-toggle-actions.html" class="card">
+          <h3>Scroll Toggle Actions</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/scroll/scroll-trigger-basic.html" class="card">
+          <h3>Scroll Trigger Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+      </div>
+    </div>
+    <div class="category">
+      <h2>STAGGER (8 animaciones)</h2>
+      <div class="grid">
+        <a href="animations/stagger/stagger-axis.html" class="card">
+          <h3>Stagger Axis</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/stagger/stagger-ease.html" class="card">
+          <h3>Stagger Ease</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/stagger/stagger-function.html" class="card">
+          <h3>Stagger Function</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/stagger/stagger-grid.html" class="card">
+          <h3>Stagger Grid</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/stagger/stagger-object.html" class="card">
+          <h3>Stagger Object</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/stagger/stagger-patterns.html" class="card">
+          <h3>Stagger Patterns</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/stagger/stagger-repeatyoyo.html" class="card">
+          <h3>Stagger Repeatyoyo</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/stagger/stagger-simple.html" class="card">
+          <h3>Stagger Simple</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+      </div>
+    </div>
+    <div class="category">
+      <h2>SVG (17 animaciones)</h2>
+      <div class="grid">
+        <a href="animations/svg/svg-drawsvg-basic.html" class="card">
+          <h3>Svg Drawsvg Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-drawsvg-letter-outline.html" class="card">
+          <h3>Svg Drawsvg Letter Outline</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-drawsvg-logo-timeline.html" class="card">
+          <h3>Svg Drawsvg Logo Timeline</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-drawsvg-partial.html" class="card">
+          <h3>Svg Drawsvg Partial</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-drawsvg-reverse.html" class="card">
+          <h3>Svg Drawsvg Reverse</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-drawsvg-signature.html" class="card">
+          <h3>Svg Drawsvg Signature</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-morphsvg-array.html" class="card">
+          <h3>Svg Morphsvg Array</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-morphsvg-basic.html" class="card">
+          <h3>Svg Morphsvg Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-morphsvg-callback.html" class="card">
+          <h3>Svg Morphsvg Callback</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-morphsvg-complex.html" class="card">
+          <h3>Svg Morphsvg Complex</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-morphsvg-shapeindex.html" class="card">
+          <h3>Svg Morphsvg Shapeindex</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-motionpath-autorotate.html" class="card">
+          <h3>Svg Motionpath Autorotate</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-motionpath-basic.html" class="card">
+          <h3>Svg Motionpath Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-motionpath-ease.html" class="card">
+          <h3>Svg Motionpath Ease</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-motionpath-offset.html" class="card">
+          <h3>Svg Motionpath Offset</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-motionpath-scroll.html" class="card">
+          <h3>Svg Motionpath Scroll</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/svg/svg-motionpath-timeline.html" class="card">
+          <h3>Svg Motionpath Timeline</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+      </div>
+    </div>
+    <div class="category">
+      <h2>TEXT (19 animaciones)</h2>
+      <div class="grid">
+        <a href="animations/text/text-scramble-basic.html" class="card">
+          <h3>Text Scramble Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-scramble-charset.html" class="card">
+          <h3>Text Scramble Charset</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-scramble-custom.html" class="card">
+          <h3>Text Scramble Custom</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-scramble-multiple.html" class="card">
+          <h3>Text Scramble Multiple</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-scramble-reverse.html" class="card">
+          <h3>Text Scramble Reverse</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-scramble-timeline.html" class="card">
+          <h3>Text Scramble Timeline</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-splittext-basic.html" class="card">
+          <h3>Text Splittext Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-splittext-chars.html" class="card">
+          <h3>Text Splittext Chars</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-splittext-cleanup.html" class="card">
+          <h3>Text Splittext Cleanup</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-splittext-lines.html" class="card">
+          <h3>Text Splittext Lines</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-splittext-timeline.html" class="card">
+          <h3>Text Splittext Timeline</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-splittext-word-wrap.html" class="card">
+          <h3>Text Splittext Word Wrap</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-splittext-words.html" class="card">
+          <h3>Text Splittext Words</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-textplugin-basic.html" class="card">
+          <h3>Text Textplugin Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-textplugin-callback.html" class="card">
+          <h3>Text Textplugin Callback</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-textplugin-delimited.html" class="card">
+          <h3>Text Textplugin Delimited</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-textplugin-diff.html" class="card">
+          <h3>Text Textplugin Diff</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-textplugin-html.html" class="card">
+          <h3>Text Textplugin Html</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/text/text-textplugin-number.html" class="card">
+          <h3>Text Textplugin Number</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+      </div>
+    </div>
+    <div class="category">
+      <h2>TIMELINE (10 animaciones)</h2>
+      <div class="grid">
+        <a href="animations/timeline/timeline-basic.html" class="card">
+          <h3>Timeline Basic</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/timeline/timeline-call.html" class="card">
+          <h3>Timeline Call</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/timeline/timeline-control.html" class="card">
+          <h3>Timeline Control</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/timeline/timeline-events.html" class="card">
+          <h3>Timeline Events</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/timeline/timeline-labels.html" class="card">
+          <h3>Timeline Labels</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/timeline/timeline-mixed.html" class="card">
+          <h3>Timeline Mixed</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/timeline/timeline-nested.html" class="card">
+          <h3>Timeline Nested</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/timeline/timeline-pause.html" class="card">
+          <h3>Timeline Pause</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/timeline/timeline-position.html" class="card">
+          <h3>Timeline Position</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+        <a href="animations/timeline/timeline-repeat.html" class="card">
+          <h3>Timeline Repeat</h3>
+          <p>Demo interactiva con control panel</p>
+          <span class="badge">→ Ver demo</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

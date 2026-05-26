@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>Pixi.js básico con GSAP — GSAP Visual Codex</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-1: #0d0f10; --bg-2: #1a1d20; --bg-3: #252a30;
+            --text-1: #e4e8ec; --text-2: #a1a9b3;
+            --accent: #88ce02; --coral: #ff5e7a; --border-1: #2d3339;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        body { font-family: var(--font-body); background: var(--bg-1); color: var(--text-1); }
+        .page { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        .back { color: var(--text-2); text-decoration: none; display: inline-block; margin-bottom: 1.5rem; padding: 0.4rem 1rem; border: 1px solid var(--border-1); border-radius: 8px; }
+        .back:hover { color: var(--accent); border-color: var(--accent); }
+        h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; font-family: var(--font-mono); }
+        .subtitle { color: var(--text-2); margin-bottom: 2rem; }
+        .stage-wrapper { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); overflow: hidden; margin-bottom: 1rem; }
+        #demo-stage { min-height: 300px; display: flex; align-items: center; justify-content: center; padding: 2rem; flex-wrap: wrap; gap: 1rem; position: relative; }
+        .controls-bar { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .btn { padding: 0.5rem 1.5rem; border-radius: 8px; border: 1px solid var(--border-1); background: var(--bg-2); color: var(--text-1); cursor: pointer; transition: all 0.2s; font-family: var(--font-body); }
+        .btn:hover { border-color: var(--accent); color: var(--accent); }
+        .panel { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; margin-bottom: 2rem; }
+        .panel h3 { color: var(--accent); margin-bottom: 1rem; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .control-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+        .control-row label { min-width: 130px; font-size: 0.85rem; color: var(--text-2); }
+        .control-row input[type=range] { flex: 1; accent-color: var(--accent); }
+        .control-row select { padding: 0.25rem 0.5rem; background: var(--bg-3); color: var(--text-1); border: 1px solid var(--border-1); border-radius: 4px; flex: 1; }
+        .val { min-width: 50px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); }
+        .code-block { background: #1e1e2e; border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; margin-bottom: 2rem; }
+        pre { overflow-x: auto; }
+        code { font-family: var(--font-mono); font-size: 0.9rem; color: #cdd6f4; white-space: pre; }
+        .copy-btn { margin-bottom: 1rem; }
+        .note { background: var(--bg-3); border: 1px solid var(--coral); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem; color: var(--text-2); font-size: 0.85rem; }
+        .note strong { color: var(--coral); }
+</style>
+</head>
+<body>
+<div class="page">
+    <a href="../../todas-las-animaciones.html" class="back">← Volver</a>
+    <h1>Pixi.js básico con GSAP</h1>
+    <p class="subtitle">Sprites y gráficos 2D acelerados con WebGL + GSAP</p>
+    <div class="stage-wrapper"><div id="demo-stage" style="padding:0;"><canvas id="pixi-canvas" style="width:100%;height:300px;display:block;"></canvas></div></div>
+<div class="controls-bar"><button class="btn" onclick="restartAnim()">↻ Reiniciar</button></div>
+<div class="panel"><h3>Panel de control</h3>
+<div class="control-row"><label>cantidad</label><input type="range" id="c-count" min="5" max="50" step="1" value="20"><span class="val" id="v-count">20</span></div>
+<div class="control-row"><label>velocidad</label><input type="range" id="c-speed" min="0.5" max="3" step="0.1" value="1"><span class="val" id="v-speed">1</span></div>
+</div>
+<div class="code-block"><button class="btn copy-btn" onclick="copyCode()">📋 Copiar</button><pre><code id="code-display"></code></pre></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script>
+let currentTween = null;
+const stage = document.getElementById('demo-stage');
+function copyCode() { navigator.clipboard.writeText(document.getElementById('code-display').textContent); }
+
+let pixiApp;
+function restartAnim() {
+    gsap.killTweensOf('*');
+    if (pixiApp) { pixiApp.destroy(false); pixiApp = null; }
+    const canvas = document.getElementById('pixi-canvas');
+    const count = parseInt(document.getElementById('c-count').value);
+    const speed = parseFloat(document.getElementById('c-speed').value);
+    const W = canvas.clientWidth, H = 300;
+    // Usar Canvas 2D como fallback si Pixi no está disponible
+    const ctx = canvas.getContext('2d');
+    canvas.width = W; canvas.height = H;
+    const circles = Array.from({length: count}, () => ({
+        x: Math.random() * W, y: Math.random() * H,
+        r: 5 + Math.random() * 25,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        color: ['#88ce02','#ff5e7a','#4fc3f7','#ffb74d','#ce93d8'][Math.floor(Math.random()*5)],
+        alpha: 0.7 + Math.random() * 0.3
+    }));
+    gsap.from(circles.map(c => ({alpha: 0})), { alpha: 1, duration: 1, stagger: 0.05 });
+    let animRunning = true;
+    const render = () => {
+        if (!animRunning) return;
+        ctx.clearRect(0, 0, W, H);
+        ctx.fillStyle = '#1a1d20';
+        ctx.fillRect(0, 0, W, H);
+        circles.forEach(c => {
+            c.x += c.vx * speed; c.y += c.vy * speed;
+            if (c.x < 0 || c.x > W) c.vx *= -1;
+            if (c.y < 0 || c.y > H) c.vy *= -1;
+            ctx.beginPath();
+            ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+            ctx.fillStyle = c.color;
+            ctx.globalAlpha = c.alpha;
+            ctx.fill();
+            ctx.globalAlpha = 1;
+        });
+        requestAnimationFrame(render);
+    };
+    render();
+    currentTween = { kill: () => { animRunning = false; } };
+    document.getElementById('code-display').textContent = `// Pixi.js + GSAP
+const app = new PIXI.Application({ width: 800, height: 300 });
+
+// Crear sprites
+const circle = new PIXI.Graphics();
+circle.beginFill(0x88ce02);
+circle.drawCircle(0, 0, 30);
+app.stage.addChild(circle);
+
+// Animar con GSAP
+gsap.to(circle, {
+  x: 400, y: 150,
+  duration: 2,
+  ease: "power2.inOut",
+  repeat: -1, yoyo: true
+});`;
+}
+document.getElementById('c-count').addEventListener('input', function() { document.getElementById('v-count').textContent = this.value; restartAnim(); });
+document.getElementById('c-speed').addEventListener('input', function() { document.getElementById('v-speed').textContent = this.value; restartAnim(); });
+
+if (typeof restartAnim === 'function') restartAnim();
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>Easing - GSAP Visual Codex</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-1: #0d0f10;
+            --bg-2: #1a1d20;
+            --text-1: #e4e8ec;
+            --text-2: #a1a9b3;
+            --accent: #88ce02;
+            --border-1: #2d3339;
+            --radius: 8px;
+            --radius-lg: 12px;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        body { font-family: var(--font-body); background: var(--bg-1); color: var(--text-1); padding: 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { margin-bottom: 3rem; }
+        .header h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; }
+        .back { display: inline-block; color: var(--text-2); text-decoration: none; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1px solid var(--border-1); border-radius: var(--radius); transition: all 0.3s; }
+        .back:hover { color: var(--accent); border-color: var(--accent); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .item { background: var(--bg-2); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-1); transition: all 0.3s; }
+        .item:hover { transform: translateY(-2px); border-color: var(--accent); }
+        .item a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .item a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back">← Volver al inicio</a>
+        <div class="header">
+            <h1>📈 Easing</h1>
+            <p style="color: var(--text-2);">30 animaciones disponibles</p>
+        </div>
+        <div class="grid">
+            <div class="item"><a href="ease-back-in.html">Ease Back In</a></div>
+            <div class="item"><a href="ease-back.html">Ease Back</a></div>
+            <div class="item"><a href="ease-bounce.html">Ease Bounce</a></div>
+            <div class="item"><a href="ease-bouncein.html">Ease Bouncein</a></div>
+            <div class="item"><a href="ease-bounceinout.html">Ease Bounceinout</a></div>
+            <div class="item"><a href="ease-circ-in.html">Ease Circ In</a></div>
+            <div class="item"><a href="ease-circ.html">Ease Circ</a></div>
+            <div class="item"><a href="ease-cubic.html">Ease Cubic</a></div>
+            <div class="item"><a href="ease-custom.html">Ease Custom</a></div>
+            <div class="item"><a href="ease-custombounce.html">Ease Custombounce</a></div>
+            <div class="item"><a href="ease-customwiggle.html">Ease Customwiggle</a></div>
+            <div class="item"><a href="ease-elastic.html">Ease Elastic</a></div>
+            <div class="item"><a href="ease-explorer.html">Ease Explorer</a></div>
+            <div class="item"><a href="ease-expo.html">Ease Expo</a></div>
+            <div class="item"><a href="ease-exposcale.html">Ease Exposcale</a></div>
+            <div class="item"><a href="ease-linear.html">Ease Linear</a></div>
+            <div class="item"><a href="ease-log.html">Ease Log</a></div>
+            <div class="item"><a href="ease-power.html">Ease Power</a></div>
+            <div class="item"><a href="ease-power1in.html">Ease Power1In</a></div>
+            <div class="item"><a href="ease-power1out.html">Ease Power1Out</a></div>
+            <div class="item"><a href="ease-power3out.html">Ease Power3Out</a></div>
+            <div class="item"><a href="ease-power4out.html">Ease Power4Out</a></div>
+            <div class="item"><a href="ease-quad-out.html">Ease Quad Out</a></div>
+            <div class="item"><a href="ease-quad.html">Ease Quad</a></div>
+            <div class="item"><a href="ease-quart.html">Ease Quart</a></div>
+            <div class="item"><a href="ease-quint.html">Ease Quint</a></div>
+            <div class="item"><a href="ease-rough.html">Ease Rough</a></div>
+            <div class="item"><a href="ease-sine.html">Ease Sine</a></div>
+            <div class="item"><a href="ease-slowmo.html">Ease Slowmo</a></div>
+            <div class="item"><a href="ease-steps.html">Ease Steps</a></div>
+        </div>
+    </div>
+</body>
+</html>

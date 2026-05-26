@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>Interaction - GSAP Visual Codex</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-1: #0d0f10;
+            --bg-2: #1a1d20;
+            --text-1: #e4e8ec;
+            --text-2: #a1a9b3;
+            --accent: #88ce02;
+            --border-1: #2d3339;
+            --radius: 8px;
+            --radius-lg: 12px;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        body { font-family: var(--font-body); background: var(--bg-1); color: var(--text-1); padding: 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { margin-bottom: 3rem; }
+        .header h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; }
+        .back { display: inline-block; color: var(--text-2); text-decoration: none; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1px solid var(--border-1); border-radius: var(--radius); transition: all 0.3s; }
+        .back:hover { color: var(--accent); border-color: var(--accent); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .item { background: var(--bg-2); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-1); transition: all 0.3s; }
+        .item:hover { transform: translateY(-2px); border-color: var(--accent); }
+        .item a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .item a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back">← Volver al inicio</a>
+        <div class="header">
+            <h1>Interaction</h1>
+            <p style="color: var(--text-2);">30 animaciones disponibles</p>
+        </div>
+        <div class="grid">
+            <div class="item"><a href="interaction-draggable-allowContextMenu.html">Interaction Draggable Allowcontextmenu</a></div>
+            <div class="item"><a href="interaction-draggable-basic.html">Interaction Draggable Basic</a></div>
+            <div class="item"><a href="interaction-draggable-bounds.html">Interaction Draggable Bounds</a></div>
+            <div class="item"><a href="interaction-draggable-cursor.html">Interaction Draggable Cursor</a></div>
+            <div class="item"><a href="interaction-draggable-inertia.html">Interaction Draggable Inertia</a></div>
+            <div class="item"><a href="interaction-draggable-momentum.html">Interaction Draggable Momentum</a></div>
+            <div class="item"><a href="interaction-draggable-onDrag.html">Interaction Draggable Ondrag</a></div>
+            <div class="item"><a href="interaction-draggable-snap.html">Interaction Draggable Snap</a></div>
+            <div class="item"><a href="interaction-draggable-threshold.html">Interaction Draggable Threshold</a></div>
+            <div class="item"><a href="interaction-draggable-zIndex.html">Interaction Draggable Zindex</a></div>
+            <div class="item"><a href="interaction-flip-absolute.html">Interaction Flip Absolute</a></div>
+            <div class="item"><a href="interaction-flip-basic.html">Interaction Flip Basic</a></div>
+            <div class="item"><a href="interaction-flip-batch.html">Interaction Flip Batch</a></div>
+            <div class="item"><a href="interaction-flip-smoothChild.html">Interaction Flip Smoothchild</a></div>
+            <div class="item"><a href="interaction-flip-stagger.html">Interaction Flip Stagger</a></div>
+            <div class="item"><a href="interaction-flip-timeline.html">Interaction Flip Timeline</a></div>
+            <div class="item"><a href="interaction-observer-pointer.html">Interaction Observer Pointer</a></div>
+            <div class="item"><a href="interaction-observer-thresholdX.html">Interaction Observer Thresholdx</a></div>
+            <div class="item"><a href="interaction-observer-thresholdY.html">Interaction Observer Thresholdy</a></div>
+            <div class="item"><a href="interaction-observer-tolerance.html">Interaction Observer Tolerance</a></div>
+            <div class="item"><a href="interaction-observer-touch.html">Interaction Observer Touch</a></div>
+            <div class="item"><a href="interaction-observer-velocityTrack.html">Interaction Observer Velocitytrack</a></div>
+            <div class="item"><a href="interaction-observer-wheel.html">Interaction Observer Wheel</a></div>
+            <div class="item"><a href="interaction-physics-acceleration.html">Interaction Physics Acceleration</a></div>
+            <div class="item"><a href="interaction-physics-basic.html">Interaction Physics Basic</a></div>
+            <div class="item"><a href="interaction-physics-bounce.html">Interaction Physics Bounce</a></div>
+            <div class="item"><a href="interaction-physics-custom.html">Interaction Physics Custom</a></div>
+            <div class="item"><a href="interaction-physics-friction.html">Interaction Physics Friction</a></div>
+            <div class="item"><a href="interaction-physics-gravity.html">Interaction Physics Gravity</a></div>
+            <div class="item"><a href="interaction-physics-velocity.html">Interaction Physics Velocity</a></div>
+        </div>
+    </div>
+</body>
+</html>

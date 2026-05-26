@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>Pixi.js animación avanzada — GSAP Visual Codex</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-1: #0d0f10; --bg-2: #1a1d20; --bg-3: #252a30;
+            --text-1: #e4e8ec; --text-2: #a1a9b3;
+            --accent: #88ce02; --coral: #ff5e7a; --border-1: #2d3339;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        body { font-family: var(--font-body); background: var(--bg-1); color: var(--text-1); }
+        .page { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        .back { color: var(--text-2); text-decoration: none; display: inline-block; margin-bottom: 1.5rem; padding: 0.4rem 1rem; border: 1px solid var(--border-1); border-radius: 8px; }
+        .back:hover { color: var(--accent); border-color: var(--accent); }
+        h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; font-family: var(--font-mono); }
+        .subtitle { color: var(--text-2); margin-bottom: 2rem; }
+        .stage-wrapper { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); overflow: hidden; margin-bottom: 1rem; }
+        #demo-stage { min-height: 300px; display: flex; align-items: center; justify-content: center; padding: 2rem; flex-wrap: wrap; gap: 1rem; position: relative; }
+        .controls-bar { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .btn { padding: 0.5rem 1.5rem; border-radius: 8px; border: 1px solid var(--border-1); background: var(--bg-2); color: var(--text-1); cursor: pointer; transition: all 0.2s; font-family: var(--font-body); }
+        .btn:hover { border-color: var(--accent); color: var(--accent); }
+        .panel { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; margin-bottom: 2rem; }
+        .panel h3 { color: var(--accent); margin-bottom: 1rem; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .control-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+        .control-row label { min-width: 130px; font-size: 0.85rem; color: var(--text-2); }
+        .control-row input[type=range] { flex: 1; accent-color: var(--accent); }
+        .control-row select { padding: 0.25rem 0.5rem; background: var(--bg-3); color: var(--text-1); border: 1px solid var(--border-1); border-radius: 4px; flex: 1; }
+        .val { min-width: 50px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); }
+        .code-block { background: #1e1e2e; border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; margin-bottom: 2rem; }
+        pre { overflow-x: auto; }
+        code { font-family: var(--font-mono); font-size: 0.9rem; color: #cdd6f4; white-space: pre; }
+        .copy-btn { margin-bottom: 1rem; }
+        .note { background: var(--bg-3); border: 1px solid var(--coral); border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 1rem; color: var(--text-2); font-size: 0.85rem; }
+        .note strong { color: var(--coral); }
+</style>
+</head>
+<body>
+<div class="page">
+    <a href="../../todas-las-animaciones.html" class="back">← Volver</a>
+    <h1>Pixi.js animación avanzada</h1>
+    <p class="subtitle">Efectos visuales complejos con Canvas 2D + GSAP</p>
+    <div class="stage-wrapper"><div id="demo-stage" style="padding:0;"><canvas id="pixi-canvas" style="width:100%;height:300px;display:block;"></canvas></div></div>
+<div class="controls-bar"><button class="btn" onclick="restartAnim()">↻ Reiniciar</button></div>
+<div class="panel"><h3>Panel de control</h3>
+<div class="control-row"><label>efecto</label><select id="c-effect"><option value="fireworks">Fuegos artificiales</option><option value="waves">Ondas</option><option value="spiral">Espiral</option></select></div>
+</div>
+<div class="code-block"><button class="btn copy-btn" onclick="copyCode()">📋 Copiar</button><pre><code id="code-display"></code></pre></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script>
+let currentTween = null;
+const stage = document.getElementById('demo-stage');
+function copyCode() { navigator.clipboard.writeText(document.getElementById('code-display').textContent); }
+
+let animRunning = false;
+function restartAnim() {
+    gsap.killTweensOf('*');
+    animRunning = false;
+    setTimeout(() => {
+        animRunning = true;
+        const canvas = document.getElementById('pixi-canvas');
+        const ctx = canvas.getContext('2d');
+        const W = canvas.clientWidth, H = 300;
+        canvas.width = W; canvas.height = H;
+        const effect = document.getElementById('c-effect').value;
+        let t = 0;
+        const render = () => {
+            if (!animRunning) return;
+            ctx.fillStyle = 'rgba(13,15,16,0.15)';
+            ctx.fillRect(0, 0, W, H);
+            if (effect === 'fireworks') {
+                const cx = W/2 + Math.sin(t*0.5)*100, cy = H/2 + Math.cos(t*0.3)*50;
+                for (let i = 0; i < 12; i++) {
+                    const angle = (i/12)*Math.PI*2 + t;
+                    const r = 50 + Math.sin(t*3+i)*20;
+                    ctx.beginPath();
+                    ctx.arc(cx + Math.cos(angle)*r, cy + Math.sin(angle)*r, 4, 0, Math.PI*2);
+                    ctx.fillStyle = `hsl(${(t*50+i*30)%360},100%,60%)`;
+                    ctx.fill();
+                }
+            } else if (effect === 'waves') {
+                for (let y = 0; y < H; y += 20) {
+                    ctx.beginPath();
+                    for (let x = 0; x <= W; x += 5) {
+                        const wave = Math.sin((x/W)*Math.PI*4 + t + y*0.02)*20;
+                        if (x === 0) ctx.moveTo(x, y + wave); else ctx.lineTo(x, y + wave);
+                    }
+                    ctx.strokeStyle = `hsla(${100+y},80%,50%,0.4)`;
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                }
+            } else {
+                for (let i = 0; i < 200; i++) {
+                    const a = i * 0.1 + t*0.5;
+                    const r = i * 1.2;
+                    const x = W/2 + Math.cos(a)*r*0.8;
+                    const y = H/2 + Math.sin(a)*r*0.5;
+                    if (x < 0 || x > W || y < 0 || y > H) continue;
+                    ctx.beginPath();
+                    ctx.arc(x, y, 2, 0, Math.PI*2);
+                    ctx.fillStyle = `hsl(${(i*10+t*50)%360},100%,60%)`;
+                    ctx.fill();
+                }
+            }
+            t += 0.03;
+            requestAnimationFrame(render);
+        };
+        render();
+    }, 50);
+    document.getElementById('code-display').textContent = `// Efectos visuales con Canvas 2D + GSAP
+// Para Pixi.js real:
+const app = new PIXI.Application({ width: 800, height: 300 });
+
+// Usar filtros de Pixi para efectos avanzados
+const blurFilter = new PIXI.filters.BlurFilter();
+sprite.filters = [blurFilter];
+
+gsap.to(blurFilter, {
+  blur: 10,
+  duration: 1,
+  yoyo: true,
+  repeat: -1
+});`;
+}
+document.getElementById('c-effect').addEventListener('change', restartAnim);
+
+if (typeof restartAnim === 'function') restartAnim();
+</script>
+</body>
+</html>

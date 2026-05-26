@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>Fundamentos - GSAP Visual Codex</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-1: #0d0f10;
+            --bg-2: #1a1d20;
+            --text-1: #e4e8ec;
+            --text-2: #a1a9b3;
+            --accent: #88ce02;
+            --border-1: #2d3339;
+            --radius: 8px;
+            --radius-lg: 12px;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        body { font-family: var(--font-body); background: var(--bg-1); color: var(--text-1); padding: 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { margin-bottom: 3rem; }
+        .header h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; }
+        .back { display: inline-block; color: var(--text-2); text-decoration: none; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1px solid var(--border-1); border-radius: var(--radius); transition: all 0.3s; }
+        .back:hover { color: var(--accent); border-color: var(--accent); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .item { background: var(--bg-2); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-1); transition: all 0.3s; }
+        .item:hover { transform: translateY(-2px); border-color: var(--accent); }
+        .item a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .item a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back">← Volver al inicio</a>
+        <div class="header">
+            <h1>Fundamentos</h1>
+            <p style="color: var(--text-2);">12 animaciones disponibles</p>
+        </div>
+        <div class="grid">
+            <div class="item"><a href="gsap-context.html">Gsap Context</a></div>
+            <div class="item"><a href="gsap-delayedcall.html">Gsap Delayedcall</a></div>
+            <div class="item"><a href="gsap-effects.html">Gsap Effects</a></div>
+            <div class="item"><a href="gsap-from.html">Gsap From</a></div>
+            <div class="item"><a href="gsap-fromto.html">Gsap Fromto</a></div>
+            <div class="item"><a href="gsap-getproperty.html">Gsap Getproperty</a></div>
+            <div class="item"><a href="gsap-killtweensof.html">Gsap Killtweensof</a></div>
+            <div class="item"><a href="gsap-quicksetter.html">Gsap Quicksetter</a></div>
+            <div class="item"><a href="gsap-quickto.html">Gsap Quickto</a></div>
+            <div class="item"><a href="gsap-set.html">Gsap Set</a></div>
+            <div class="item"><a href="gsap-timeline.html">Gsap Timeline</a></div>
+            <div class="item"><a href="gsap-to.html">Gsap To</a></div>
+        </div>
+    </div>
+</body>
+</html>

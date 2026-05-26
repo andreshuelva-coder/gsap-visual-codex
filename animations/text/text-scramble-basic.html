@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>ScrambleText básico — GSAP Visual Codex</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-1: #0d0f10; --bg-2: #1a1d20; --bg-3: #252a30;
+            --text-1: #e4e8ec; --text-2: #a1a9b3;
+            --accent: #88ce02; --coral: #ff5e7a; --border-1: #2d3339;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        body { font-family: var(--font-body); background: var(--bg-1); color: var(--text-1); }
+        .page { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        .back { color: var(--text-2); text-decoration: none; display: inline-block; margin-bottom: 1.5rem; padding: 0.4rem 1rem; border: 1px solid var(--border-1); border-radius: 8px; transition: all 0.2s; }
+        .back:hover { color: var(--accent); border-color: var(--accent); }
+        h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; font-family: var(--font-mono); }
+        .subtitle { color: var(--text-2); margin-bottom: 2rem; }
+        .stage-wrapper { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); overflow: hidden; margin-bottom: 1rem; }
+        #demo-stage { min-height: 300px; display: flex; align-items: center; justify-content: center; padding: 2rem; flex-wrap: wrap; gap: 1rem; position: relative; }
+        .controls-bar { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .btn { padding: 0.5rem 1.5rem; border-radius: 8px; border: 1px solid var(--border-1); background: var(--bg-2); color: var(--text-1); cursor: pointer; transition: all 0.2s; font-family: var(--font-body); }
+        .btn:hover { border-color: var(--accent); color: var(--accent); }
+        .panel { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; margin-bottom: 2rem; }
+        .panel h3 { color: var(--accent); margin-bottom: 1rem; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .control-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+        .control-row label { min-width: 130px; font-size: 0.85rem; color: var(--text-2); }
+        .control-row input[type=range] { flex: 1; accent-color: var(--accent); }
+        .control-row select { padding: 0.25rem 0.5rem; background: var(--bg-3); color: var(--text-1); border: 1px solid var(--border-1); border-radius: 4px; flex: 1; }
+        .val { min-width: 50px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); }
+        .code-block { background: #1e1e2e; border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; margin-bottom: 2rem; }
+        pre { overflow-x: auto; }
+        code { font-family: var(--font-mono); font-size: 0.9rem; color: #cdd6f4; white-space: pre; }
+        .copy-btn { margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+<div class="page">
+    <a href="../../todas-las-animaciones.html" class="back">← Volver</a>
+    <h1>ScrambleText básico</h1>
+    <p class="subtitle">Efecto de texto que se baraja como glitch antes de revelar el texto real</p>
+    
+<div class="stage-wrapper"><div id="demo-stage"><div id="scramble-text" style="font-size:2rem;font-family:monospace;color:var(--accent);text-align:center;letter-spacing:0.1em;">GSAP SCRAMBLE</div></div></div>
+<div class="controls-bar"><button class="btn" onclick="restartAnim()">↻ Reiniciar</button></div>
+<div class="panel"><h3>Panel de control</h3>
+<div class="control-row"><label>duration</label><input type="range" id="c-dur" min="0.5" max="5" step="0.1" value="2"><span class="val" id="v-dur">2</span></div>
+<div class="control-row"><label>charset</label><select id="c-chars">
+<option value="uppercase">MAYÚSCULAS</option>
+<option value="lowercase">minúsculas</option>
+<option value="0123456789">números</option>
+<option value="!@#$%^&*">símbolos</option>
+</select></div>
+</div>
+<div class="code-block"><button class="btn copy-btn" onclick="copyCode()">📋 Copiar</button><pre><code id="code-display"></code></pre></div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script>
+let currentTween = null;
+const stage = document.getElementById('demo-stage');
+
+
+const phrases = ['GSAP SCRAMBLE', 'VIBE CODING', 'ANIMACION'];
+let phraseIndex = 0;
+
+function scrambleText(el, targetText, duration, chars) {
+    const charSet = chars === 'uppercase' ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' :
+                    chars === 'lowercase' ? 'abcdefghijklmnopqrstuvwxyz' : chars;
+    const totalFrames = Math.round(duration * 60);
+    let frame = 0;
+    const interval = setInterval(() => {
+        frame++;
+        const progress = frame / totalFrames;
+        let result = '';
+        for (let i = 0; i < targetText.length; i++) {
+            if (progress > i / targetText.length) {
+                result += targetText[i];
+            } else {
+                result += charSet[Math.floor(Math.random() * charSet.length)];
+            }
+        }
+        el.textContent = result;
+        if (frame >= totalFrames) {
+            el.textContent = targetText;
+            clearInterval(interval);
+        }
+    }, 1000 / 60);
+    return { kill: () => clearInterval(interval) };
+}
+
+function restartAnim() {
+    if (currentTween?.kill) currentTween.kill();
+    const el = document.getElementById('scramble-text');
+    const dur = parseFloat(document.getElementById('c-dur').value);
+    const chars = document.getElementById('c-chars').value;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    currentTween = scrambleText(el, phrases[phraseIndex], dur, chars);
+    document.getElementById('code-display').textContent = `// Con ScrambleTextPlugin (Club GSAP):
+gsap.registerPlugin(ScrambleTextPlugin);
+
+gsap.to("#texto", {
+  scrambleText: {
+    text: "NUEVO TEXTO",
+    chars: "${chars}",
+    speed: 0.4
+  },
+  duration: ${dur}
+});`;
+}
+document.getElementById('c-dur').addEventListener('input', function() { document.getElementById('v-dur').textContent = this.value; });
+document.getElementById('c-chars').addEventListener('change', () => {});
+
+
+function copyCode() {
+    navigator.clipboard.writeText(document.getElementById('code-display').textContent);
+}
+
+if (typeof restartAnim === 'function') restartAnim();
+</script>
+</body>
+</html>

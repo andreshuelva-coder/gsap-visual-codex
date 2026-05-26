@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>MorphSVG básico — GSAP Visual Codex</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-1: #0d0f10; --bg-2: #1a1d20; --bg-3: #252a30;
+            --text-1: #e4e8ec; --text-2: #a1a9b3;
+            --accent: #88ce02; --coral: #ff5e7a; --border-1: #2d3339;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        body { font-family: var(--font-body); background: var(--bg-1); color: var(--text-1); }
+        .page { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        .back { color: var(--text-2); text-decoration: none; display: inline-block; margin-bottom: 1.5rem; padding: 0.4rem 1rem; border: 1px solid var(--border-1); border-radius: 8px; transition: all 0.2s; }
+        .back:hover { color: var(--accent); border-color: var(--accent); }
+        h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; font-family: var(--font-mono); }
+        .subtitle { color: var(--text-2); margin-bottom: 2rem; }
+        .stage-wrapper { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); overflow: hidden; margin-bottom: 1rem; }
+        #demo-stage { min-height: 300px; display: flex; align-items: center; justify-content: center; padding: 2rem; flex-wrap: wrap; gap: 1rem; position: relative; }
+        .controls-bar { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .btn { padding: 0.5rem 1.5rem; border-radius: 8px; border: 1px solid var(--border-1); background: var(--bg-2); color: var(--text-1); cursor: pointer; transition: all 0.2s; font-family: var(--font-body); }
+        .btn:hover { border-color: var(--accent); color: var(--accent); }
+        .panel { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; margin-bottom: 2rem; }
+        .panel h3 { color: var(--accent); margin-bottom: 1rem; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .control-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+        .control-row label { min-width: 130px; font-size: 0.85rem; color: var(--text-2); }
+        .control-row input[type=range] { flex: 1; accent-color: var(--accent); }
+        .control-row select { padding: 0.25rem 0.5rem; background: var(--bg-3); color: var(--text-1); border: 1px solid var(--border-1); border-radius: 4px; flex: 1; }
+        .val { min-width: 50px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); }
+        .code-block { background: #1e1e2e; border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; margin-bottom: 2rem; }
+        pre { overflow-x: auto; }
+        code { font-family: var(--font-mono); font-size: 0.9rem; color: #cdd6f4; white-space: pre; }
+        .copy-btn { margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+<div class="page">
+    <a href="../../todas-las-animaciones.html" class="back">← Volver</a>
+    <h1>MorphSVG básico</h1>
+    <p class="subtitle">Transforma un shape SVG en otro</p>
+    
+<div class="stage-wrapper"><div id="demo-stage">
+<svg width="300" height="200" viewBox="0 0 300 200">
+    <path id="morph-shape" d="M150,30 L270,170 L30,170 Z" fill="#88ce02" opacity="0.9"/>
+</svg>
+</div></div>
+<div class="controls-bar"><button class="btn" onclick="restartAnim()">↻ Reiniciar</button></div>
+<div class="panel"><h3>Panel de control</h3>
+<div class="control-row"><label>shape destino</label><select id="c-shape">
+<option value="M150,30 Q270,30 270,150 Q270,170 150,170 Q30,170 30,150 Q30,30 150,30">Elipse</option>
+<option value="M30,30 L270,30 L270,170 L30,170 Z">Rectángulo</option>
+<option value="M150,20 L180,90 L270,90 L200,140 L220,190 L150,150 L80,190 L100,140 L30,90 L120,90 Z">Estrella</option>
+</select></div>
+<div class="control-row"><label>duration</label><input type="range" id="c-dur" min="0.3" max="3" step="0.1" value="1"><span class="val" id="v-dur">1</span></div>
+</div>
+<div class="code-block"><button class="btn copy-btn" onclick="copyCode()">📋 Copiar</button><pre><code id="code-display"></code></pre></div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script>
+let currentTween = null;
+const stage = document.getElementById('demo-stage');
+
+
+const originalPath = "M150,30 L270,170 L30,170 Z";
+function restartAnim() {
+    gsap.killTweensOf('*');
+    const shape = document.getElementById('morph-shape');
+    const targetD = document.getElementById('c-shape').value;
+    const dur = parseFloat(document.getElementById('c-dur').value);
+    shape.setAttribute('d', originalPath);
+    const tl = gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 0.5 });
+    tl.to(shape, { attr: { d: targetD }, duration: dur, ease: 'power2.inOut' });
+    currentTween = tl;
+    document.getElementById('code-display').textContent = `// Con MorphSVGPlugin (Club GSAP):
+gsap.registerPlugin(MorphSVGPlugin);
+
+gsap.to("#triangulo", {
+  morphSVG: "#circulo",
+  duration: ${dur},
+  ease: "power2.inOut",
+  repeat: -1,
+  yoyo: true
+});`;
+}
+document.getElementById('c-shape').addEventListener('change', restartAnim);
+document.getElementById('c-dur').addEventListener('input', function() { document.getElementById('v-dur').textContent = this.value; restartAnim(); });
+
+
+function copyCode() {
+    navigator.clipboard.writeText(document.getElementById('code-display').textContent);
+}
+
+if (typeof restartAnim === 'function') restartAnim();
+</script>
+</body>
+</html>

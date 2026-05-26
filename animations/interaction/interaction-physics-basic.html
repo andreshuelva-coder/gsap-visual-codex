@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Physics2D — gravedad y rebote — GSAP Visual Codex</title><style>* { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg-1: #0d0f10; --bg-2: #1a1d20; --bg-3: #252a30; --text-1: #e4e8ec; --text-2: #a1a9b3; --accent: #88ce02; --coral: #ff5e7a; --border-1: #2d3339; --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; --font-mono: 'JetBrains Mono', monospace; }
+        body { font-family: var(--font-body); background: var(--bg-1); color: var(--text-1); }
+        .page { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        .back { color: var(--text-2); text-decoration: none; display: inline-block; margin-bottom: 1.5rem; padding: 0.4rem 1rem; border: 1px solid var(--border-1); border-radius: 8px; }
+        .back:hover { color: var(--accent); border-color: var(--accent); }
+        h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; font-family: var(--font-mono); }
+        .subtitle { color: var(--text-2); margin-bottom: 2rem; }
+        .stage-wrapper { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); overflow: hidden; margin-bottom: 1rem; }
+        #demo-stage { min-height: 300px; display: flex; align-items: center; justify-content: center; padding: 2rem; flex-wrap: wrap; gap: 1rem; position: relative; }
+        .controls-bar { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .btn { padding: 0.5rem 1.5rem; border-radius: 8px; border: 1px solid var(--border-1); background: var(--bg-2); color: var(--text-1); cursor: pointer; transition: all 0.2s; font-family: var(--font-body); }
+        .btn:hover { border-color: var(--accent); color: var(--accent); }
+        .panel { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; margin-bottom: 2rem; }
+        .panel h3 { color: var(--accent); margin-bottom: 1rem; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .control-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+        .control-row label { min-width: 130px; font-size: 0.85rem; color: var(--text-2); }
+        .control-row input[type=range] { flex: 1; accent-color: var(--accent); }
+        .control-row select { padding: 0.25rem 0.5rem; background: var(--bg-3); color: var(--text-1); border: 1px solid var(--border-1); border-radius: 4px; flex: 1; }
+        .val { min-width: 50px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); }
+        .code-block { background: #1e1e2e; border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; margin-bottom: 2rem; }
+        pre { overflow-x: auto; } code { font-family: var(--font-mono); font-size: 0.9rem; color: #cdd6f4; white-space: pre; }
+        .copy-btn { margin-bottom: 1rem; }</style></head>
+<body><div class="page">
+<a href="../../todas-las-animaciones.html" class="back">← Volver</a>
+<h1>Physics2D — gravedad y rebote</h1><p class="subtitle">Animaciones con física real: gravedad, fricción y rebote</p>
+
+<div class="stage-wrapper"><div id="demo-stage" style="position:relative;overflow:hidden;align-items:flex-start;justify-content:flex-start;">
+</div></div>
+<div class="controls-bar"><button class="btn" onclick="restartAnim()">↻ Lanzar objetos</button></div>
+<div class="panel"><h3>Panel de control</h3>
+<div class="control-row"><label>gravedad</label><input type="range" id="c-gravity" min="100" max="2000" step="50" value="800"><span class="val" id="v-gravity">800</span></div>
+<div class="control-row"><label>cantidad</label><input type="range" id="c-count" min="1" max="20" step="1" value="8"><span class="val" id="v-count">8</span></div>
+</div>
+<div class="code-block"><button class="btn copy-btn" onclick="copyCode()">📋 Copiar</button><pre><code id="code-display"></code></pre></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script>
+let currentTween = null;
+const stage = document.getElementById('demo-stage');
+function copyCode() { navigator.clipboard.writeText(document.getElementById('code-display').textContent); }
+
+function restartAnim() {
+    gsap.killTweensOf('*');
+    stage.innerHTML = '';
+    const gravity = parseFloat(document.getElementById('c-gravity').value);
+    const count = parseInt(document.getElementById('c-count').value);
+    const W = stage.clientWidth, H = stage.clientHeight || 300;
+    const colors = ['#88ce02','#ff5e7a','#4fc3f7','#ffb74d','#ce93d8'];
+    Array.from({length: count}).forEach((_, i) => {
+        const el = document.createElement('div');
+        const size = 20 + Math.random() * 30;
+        el.style.cssText = `position:absolute;width:${size}px;height:${size}px;border-radius:50%;background:${colors[i%colors.length]};top:0;left:${Math.random()*80+10}%;`;
+        stage.appendChild(el);
+        const vy0 = -(200 + Math.random() * 400);
+        const vx = (Math.random() - 0.5) * 200;
+        const obj = { y: 0, x: 0, vy: vy0, vx };
+        const floor = H - size;
+        let bounce = 0.65 + Math.random() * 0.2;
+        const ticker = gsap.ticker.add(() => {
+            obj.vy += gravity * gsap.ticker.deltaRatio(60) * 0.016;
+            obj.vx *= 0.99;
+            obj.x += obj.vx * 0.016;
+            obj.y += obj.vy * 0.016;
+            if (obj.y >= floor) { obj.y = floor; obj.vy *= -bounce; bounce *= 0.95; obj.vx *= 0.9; }
+            if (obj.x < 0 || obj.x > W - size) { obj.vx *= -0.8; obj.x = Math.max(0, Math.min(W - size, obj.x)); }
+            gsap.set(el, { x: obj.x, y: obj.y });
+            if (Math.abs(obj.vy) < 0.5 && obj.y >= floor - 1) gsap.ticker.remove(ticker);
+        });
+    });
+    document.getElementById('code-display').textContent = `// Física manual con GSAP ticker
+// Para Physics2DPlugin (Club GSAP):
+gsap.registerPlugin(Physics2DPlugin);
+
+gsap.to(".pelota", {
+  physics2D: {
+    velocity: 500,
+    angle: -60,
+    gravity: ${gravity},
+    friction: 0.1
+  },
+  duration: 3
+});`;
+}
+document.getElementById('c-gravity').addEventListener('input', function() { document.getElementById('v-gravity').textContent = this.value; restartAnim(); });
+document.getElementById('c-count').addEventListener('input', function() { document.getElementById('v-count').textContent = this.value; restartAnim(); });
+
+if (typeof restartAnim === 'function') restartAnim();
+</script></body></html>

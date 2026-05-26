@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>gsap.timeline() — GSAP Visual Codex</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-1: #0d0f10; --bg-2: #1a1d20; --bg-3: #252a30;
+            --text-1: #e4e8ec; --text-2: #a1a9b3;
+            --accent: #88ce02; --border-1: #2d3339;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        body { font-family: var(--font-body); background: var(--bg-1); color: var(--text-1); }
+        .page { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        .back { color: var(--text-2); text-decoration: none; display: inline-block; margin-bottom: 1.5rem; }
+        .back:hover { color: var(--accent); }
+        h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; }
+        .subtitle { color: var(--text-2); margin-bottom: 2rem; }
+        .stage-wrapper { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); overflow: hidden; margin-bottom: 1rem; }
+        #demo-stage { min-height: 300px; display: flex; align-items: center; justify-content: flex-start; padding: 2rem; flex-wrap: wrap; gap: 1rem; }
+        .controls-bar { display: flex; gap: 1rem; margin-bottom: 2rem; }
+        .btn { padding: 0.5rem 1.5rem; border-radius: 8px; border: 1px solid var(--border-1); background: var(--bg-2); color: var(--text-1); cursor: pointer; transition: all 0.2s; }
+        .btn:hover { border-color: var(--accent); color: var(--accent); }
+        .panel { background: var(--bg-2); border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; margin-bottom: 2rem; }
+        .panel h3 { color: var(--accent); margin-bottom: 1rem; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .control-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+        .control-row label { min-width: 120px; font-size: 0.85rem; color: var(--text-2); }
+        .control-row input[type=range] { flex: 1; accent-color: var(--accent); }
+        .control-row select { padding: 0.25rem 0.5rem; background: var(--bg-3); color: var(--text-1); border: 1px solid var(--border-1); border-radius: 4px; }
+        .val { min-width: 50px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); }
+        .code-block { background: #1e1e2e; border-radius: 12px; border: 1px solid var(--border-1); padding: 1.5rem; }
+        .code-block pre { overflow-x: auto; }
+        .code-block code { font-family: var(--font-mono); font-size: 0.9rem; color: #cdd6f4; white-space: pre; }
+        .copy-btn { margin-bottom: 1rem; }
+        .demo-box { width: 90px; height: 90px; border-radius: 16px; background: linear-gradient(135deg, #88ce02, #6ba301); box-shadow: 0 8px 24px rgba(136,206,2,0.4); display: grid; place-items: center; font-family: var(--font-mono); color: #0a1400; font-weight: 700; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+<div class="page">
+    <a href="../../todas-las-animaciones.html" class="back">← Volver</a>
+    <h1>gsap.timeline()</h1>
+    <p class="subtitle">Secuencia múltiples animaciones en orden</p>
+    <div class="stage-wrapper">
+        <div id="demo-stage"></div>
+    </div>
+    <div class="controls-bar">
+        <button class="btn" onclick="runAnim()">▶ Reproducir</button>
+        <button class="btn" onclick="restartAnim()">↻ Reiniciar</button>
+        <button class="btn" onclick="pauseAnim()">⏸ Pausa</button>
+    </div>
+    <div class="panel">
+        <h3>Panel de control</h3>
+        
+        <div class="control-row">
+            <label>duration</label>
+            <input type="range" id="c-duration" min="0.1" max="2" step="0.1" value="0.5">
+            <span class="val" id="v-duration">0.5</span>
+        </div>
+        <div class="control-row">
+            <label>ease</label>
+            <select id="c-ease"><option  selected>power2.out</option><option>elastic.out(1,0.3)</option><option>back.out(1.7)</option><option>bounce.out</option><option>sine.out</option></select>
+        </div>
+        <div class="control-row">
+            <label>repeat</label>
+            <input type="range" id="c-repeat" min="-1" max="5" step="1" value="0">
+            <span class="val" id="v-repeat">0</span>
+        </div>
+    </div>
+    <div class="code-block">
+        <button class="btn copy-btn" onclick="copyCode()">📋 Copiar código</button>
+        <pre><code id="code-display"></code></pre>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+let currentTween = null;
+let box = null;
+let stage = document.getElementById('demo-stage');
+
+function getParams() {
+    const p = {};
+        p.duration = parseFloat(document.getElementById('c-duration').value);
+        p.ease = document.getElementById('c-ease').value;
+        p.repeat = parseFloat(document.getElementById('c-repeat').value);
+
+    return p;
+}
+
+function updateCode() {
+    const p = getParams();
+    let code = `const tl = gsap.timeline({ repeat: {repeat} });
+tl.from(".box1", {{ y: -50, opacity: 0, duration: {duration}, ease: "{ease}" }})
+  .from(".box2", {{ y: -50, opacity: 0, duration: {duration}, ease: "{ease}" }})
+  .from(".box3", {{ y: -50, opacity: 0, duration: {duration}, ease: "{ease}" }});`;
+    Object.keys(p).forEach(k => { code = code.replaceAll('{' + k + '}', p[k]); });
+    document.getElementById('code-display').textContent = code;
+}
+
+function restartAnim() {
+    stage.innerHTML = '';
+    if (currentTween?.kill) currentTween.kill();
+    gsap.killTweensOf('*');
+    currentTween = null;
+    box = null;
+    const p = getParams();
+    
+                const colors = ['#88ce02','#ff5e7a','#4fc3f7','#ffb74d'];
+                const boxes = colors.map((c, i) => {
+                    const b = document.createElement('div');
+                    b.style.cssText = `width:60px;height:60px;border-radius:8px;background:${c};display:grid;place-items:center;font-family:monospace;color:#000;font-weight:700;font-size:0.8rem;`;
+                    b.textContent = i + 1;
+                    stage.appendChild(b);
+                    return b;
+                });
+                stage.style.gap = '1rem';
+                stage.style.flexWrap = 'wrap';
+                const tl = gsap.timeline({ repeat: p.repeat });
+                boxes.forEach(b => tl.from(b, { y: -50, opacity: 0, duration: p.duration, ease: p.ease }));
+                currentTween = tl;
+            
+    updateCode();
+}
+
+function runAnim() { currentTween?.play?.(); }
+function pauseAnim() { currentTween?.pause?.(); }
+function copyCode() {
+    navigator.clipboard.writeText(document.getElementById('code-display').textContent);
+}
+
+
+    document.getElementById('c-duration').addEventListener('input', function() {
+        document.getElementById('v-duration').textContent = this.value;
+        restartAnim();
+    });
+    document.getElementById('c-ease').addEventListener('change', restartAnim);
+
+    document.getElementById('c-repeat').addEventListener('input', function() {
+        document.getElementById('v-repeat').textContent = this.value;
+        restartAnim();
+    });
+
+
+restartAnim();
+</script>
+</body>
+</html>

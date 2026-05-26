@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Start/End absolute</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, sans-serif; background: #0d0f10; color: #e4e8ec; }
+.page { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+.back { color: #a1a9b3; text-decoration: none; display: inline-block; margin-bottom: 1.5rem; padding: 0.4rem 1rem; border: 1px solid #2d3339; border-radius: 8px; }
+h1 { font-size: 2rem; color: #88ce02; margin-bottom: 0.5rem; font-family: monospace; }
+.subtitle { color: #a1a9b3; margin-bottom: 2rem; }
+#stage { background: #1a1d20; border-radius: 12px; border: 1px solid #2d3339; min-height: 400px; padding: 2rem; display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; position: relative; }
+.btn { padding: 0.5rem 1.5rem; border-radius: 8px; border: 1px solid #2d3339; background: #1a1d20; color: #e4e8ec; cursor: pointer; }
+.btn:hover { border-color: #88ce02; color: #88ce02; }
+code { font-family: monospace; font-size: 0.85rem; color: #cdd6f4; background: #1e1e2e; border-radius: 8px; padding: 1rem; display: block; white-space: pre; margin-top: 1rem; overflow-x: auto; }
+.box { width: 80px; height: 80px; background: #88ce02; border-radius: 8px; }
+.box-coral { width: 80px; height: 80px; background: #ff5e7a; border-radius: 8px; }
+.scroll-area { height: 2000px; background: linear-gradient(180deg, #0d0f10, #1a1d20, #0d0f10); padding: 2rem; }
+.scroll-stage { position: sticky; top: 100px; background: #1a1d20; border-radius: 12px; border: 1px solid #2d3339; min-height: 400px; padding: 2rem; display: flex; align-items: center; justify-content: center; }
+.display { font-size: 1.2rem; color: #88ce02; font-weight: 900; font-family: monospace; }
+</style></head>
+<body><div class="page">
+<a href="../../todas-las-animaciones.html" class="back">← Volver</a>
+<h1>Start/End absolute</h1><p class="subtitle">Triggers absolutos</p>
+<div class="scroll-area"><div id="stage" class="scroll-stage"><div class="box" id="box"></div></div></div>
+<button class="btn" onclick="location.reload()" style="margin-top:1rem;">↻ Reiniciar</button>
+<code>scrollTrigger: {start: "300px top", end: "+=500"}</code>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Observer.min.js"></script>
+<script>
+window.addEventListener('load', function() {
+gsap.registerPlugin(ScrollTrigger);
+gsap.to('#box', {
+  scrollTrigger: {trigger: '#stage', start: '300px top', end: '+=500', scrub: 1},
+  backgroundColor: '#ff5e7a', rotation: 360
+});
+});
+</script></body></html>

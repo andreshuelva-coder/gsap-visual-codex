@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>Scroll - GSAP Visual Codex</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-1: #0d0f10;
+            --bg-2: #1a1d20;
+            --text-1: #e4e8ec;
+            --text-2: #a1a9b3;
+            --accent: #88ce02;
+            --border-1: #2d3339;
+            --radius: 8px;
+            --radius-lg: 12px;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        body { font-family: var(--font-body); background: var(--bg-1); color: var(--text-1); padding: 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { margin-bottom: 3rem; }
+        .header h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; }
+        .back { display: inline-block; color: var(--text-2); text-decoration: none; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1px solid var(--border-1); border-radius: var(--radius); transition: all 0.3s; }
+        .back:hover { color: var(--accent); border-color: var(--accent); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .item { background: var(--bg-2); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-1); transition: all 0.3s; }
+        .item:hover { transform: translateY(-2px); border-color: var(--accent); }
+        .item a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .item a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html" class="back">← Volver al inicio</a>
+        <div class="header">
+            <h1>Scroll</h1>
+            <p style="color: var(--text-2);">32 animaciones disponibles</p>
+        </div>
+        <div class="grid">
+            <div class="item"><a href="scroll-batch.html">Scroll Batch</a></div>
+            <div class="item"><a href="scroll-callbacks.html">Scroll Callbacks</a></div>
+            <div class="item"><a href="scroll-flip.html">Scroll Flip</a></div>
+            <div class="item"><a href="scroll-horizontal-pin.html">Scroll Horizontal Pin</a></div>
+            <div class="item"><a href="scroll-horizontal.html">Scroll Horizontal</a></div>
+            <div class="item"><a href="scroll-image-sequence.html">Scroll Image Sequence</a></div>
+            <div class="item"><a href="scroll-indicator.html">Scroll Indicator</a></div>
+            <div class="item"><a href="scroll-markers.html">Scroll Markers</a></div>
+            <div class="item"><a href="scroll-parallax-multi.html">Scroll Parallax Multi</a></div>
+            <div class="item"><a href="scroll-parallax.html">Scroll Parallax</a></div>
+            <div class="item"><a href="scroll-pin-section.html">Scroll Pin Section</a></div>
+            <div class="item"><a href="scroll-pin-spacing.html">Scroll Pin Spacing</a></div>
+            <div class="item"><a href="scroll-pin-timeline.html">Scroll Pin Timeline</a></div>
+            <div class="item"><a href="scroll-pin.html">Scroll Pin</a></div>
+            <div class="item"><a href="scroll-progress-bar.html">Scroll Progress Bar</a></div>
+            <div class="item"><a href="scroll-refresh.html">Scroll Refresh</a></div>
+            <div class="item"><a href="scroll-reveal-stagger.html">Scroll Reveal Stagger</a></div>
+            <div class="item"><a href="scroll-scrollto-element.html">Scroll Scrollto Element</a></div>
+            <div class="item"><a href="scroll-scrollto-horizontal.html">Scroll Scrollto Horizontal</a></div>
+            <div class="item"><a href="scroll-scrollto-y.html">Scroll Scrollto Y</a></div>
+            <div class="item"><a href="scroll-scrub.html">Scroll Scrub</a></div>
+            <div class="item"><a href="scroll-smoother-basic.html">Scroll Smoother Basic</a></div>
+            <div class="item"><a href="scroll-smoother-combined.html">Scroll Smoother Combined</a></div>
+            <div class="item"><a href="scroll-smoother-effects.html">Scroll Smoother Effects</a></div>
+            <div class="item"><a href="scroll-smoother-lag.html">Scroll Smoother Lag</a></div>
+            <div class="item"><a href="scroll-smoother-touch.html">Scroll Smoother Touch</a></div>
+            <div class="item"><a href="scroll-snap.html">Scroll Snap</a></div>
+            <div class="item"><a href="scroll-start-end-absolute.html">Scroll Start End Absolute</a></div>
+            <div class="item"><a href="scroll-start-end-dynamic.html">Scroll Start End Dynamic</a></div>
+            <div class="item"><a href="scroll-start-end-percent.html">Scroll Start End Percent</a></div>
+            <div class="item"><a href="scroll-toggle-actions.html">Scroll Toggle Actions</a></div>
+            <div class="item"><a href="scroll-trigger-basic.html">Scroll Trigger Basic</a></div>
+        </div>
+    </div>
+</body>
+</html>

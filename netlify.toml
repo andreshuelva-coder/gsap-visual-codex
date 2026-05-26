@@ -1,0 +1,57 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/animations/3d/*"
+  to = "/animations/3d/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/animations/advanced/*"
+  to = "/animations/advanced/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/animations/easing/*"
+  to = "/animations/easing/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/animations/fundamentos/*"
+  to = "/animations/fundamentos/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/animations/interaction/*"
+  to = "/animations/interaction/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/animations/patterns/*"
+  to = "/animations/patterns/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/animations/scroll/*"
+  to = "/animations/scroll/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/animations/stagger/*"
+  to = "/animations/stagger/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/animations/svg/*"
+  to = "/animations/svg/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/animations/text/*"
+  to = "/animations/text/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/animations/timeline/*"
+  to = "/animations/timeline/:splat.html"
+  status = 200
